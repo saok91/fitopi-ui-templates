@@ -1,0 +1,136 @@
+:root {
+    --bg: #fbfbfe;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --primary: #0ea5e9;
+    --accent: #f59e0b;
+    --border: #e5e7eb;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    --radius: 16px;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    font-family: "Vazirmatn", "Vazir", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+
+  .section-spacing { margin-top: 16px; }
+  .section-title { margin: 18px 0 10px; font-size: 15px; font-weight: 700; }
+  .card-spacing { margin-top: 12px; }
+  .card-actions { margin-top: 10px; }
+  .card-actions-inline { margin-top: 10px; display: block; }
+  
+  .app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 22px 16px 90px;
+    direction: rtl;
+  }
+  
+  .header { display: flex; justify-content: space-between; align-items: center; }
+  .title { font-size: 20px; font-weight: 800; }
+  .sub { font-size: 12px; color: var(--muted); }
+  
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+  }
+  
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  
+  .timeline {
+    display: grid;
+    gap: 12px;
+    border-right: 2px dashed #e2e8f0;
+    padding-right: 16px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-right: 14px;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 12px;
+  }
+  
+  .chart {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  
+  .btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .btn.secondary { background: #111827; }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 12px;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--card);
+    border-radius: 16px;
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid var(--border);
+  }
+  
+  .bottom-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  
+  .bottom-nav a.active {
+    background: #e0f2fe;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  
+  @media (max-width: 860px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+  

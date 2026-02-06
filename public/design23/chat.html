@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>گفتگو - طرح 23</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design23/style.css" />
+  <style>
+    .chat { display: grid; gap: 12px; margin-top: 16px; }
+    .bubble { background: #e0f2fe; padding: 12px; border-radius: 14px; max-width: 75%; }
+    .bubble.me { background: #dbeafe; margin-right: auto; }
+    .composer { position: fixed; bottom: 80px; right: 50%; transform: translateX(50%); width: min(1000px, 92%); display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .input { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--border); background: white; font-family: inherit; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div>
+        <div class="title">مربی فیتوپی</div>
+        <div class="sub">همراه روزهای شلوغ</div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="bubble">اگر امروز استرس داشتی، یک تمرین ۳۰ ثانیه‌ای پیشنهاد می‌دم</div>
+      <div class="bubble me">بگو چیه</div>
+      <div class="bubble">۴ نفس عمیق + یک لیوان آب قبل از میان‌وعده</div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <input class="input" placeholder="پیام بنویس..." />
+    <button class="btn">ارسال</button>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="/23/">خانه</a>
+    <a href="/23/log.html">ثبت</a>
+    <a class="active" href="/23/chat.html">گفتگو</a>
+  </div>
+</body>
+</html>

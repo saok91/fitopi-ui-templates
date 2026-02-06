@@ -1,0 +1,250 @@
+<!-- Design 17: Ocean Depth - index.html -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فیتوپی - خانه</title>
+  <link rel="stylesheet" href="/design17/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-bg"></div>
+      <div class="header-content">
+        <div class="user-section">
+          <div class="avatar">
+            <span>ز</span>
+          </div>
+          <div class="user-info">
+            <span class="user-name">زهرا عزیز</span>
+            <span class="user-date">۱۸ بهمن ۱۴۰۴</span>
+          </div>
+        </div>
+        <button class="settings-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Today's Summary -->
+      <section class="today-section">
+        <div class="today-card">
+          <div class="wave-decoration"></div>
+          <div class="today-content">
+            <div class="calorie-display">
+              <div class="calorie-circle">
+                <svg class="progress-ring" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                  <circle class="ring-fill" cx="50" cy="50" r="42" 
+                    stroke-dasharray="264" 
+                    stroke-dashoffset="79"/>
+                </svg>
+                <div class="calorie-text">
+                  <span class="calorie-current">۱۲۴۰</span>
+                  <span class="calorie-divider">/</span>
+                  <span class="calorie-total">۱۸۰۰</span>
+                </div>
+              </div>
+              <span class="calorie-label">کالری امروز</span>
+            </div>
+            <div class="today-breakdown">
+              <div class="breakdown-item">
+                <div class="breakdown-icon eaten">🍽️</div>
+                <span class="breakdown-value">۱۲۴۰</span>
+                <span class="breakdown-label">مصرفی</span>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-icon burned">🔥</div>
+                <span class="breakdown-value">۱۵۰</span>
+                <span class="breakdown-label">سوزانده</span>
+              </div>
+              <div class="breakdown-item">
+                <div class="breakdown-icon remaining">✨</div>
+                <span class="breakdown-value">۷۱۰</span>
+                <span class="breakdown-label">باقی‌مانده</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly Chart -->
+      <section class="weekly-section">
+        <div class="section-header">
+          <h2 class="section-title">هفت روز اخیر</h2>
+          <span class="section-badge">میانگین: ۱,۴۸۰</span>
+        </div>
+        <div class="weekly-chart">
+          <div class="chart-row">
+            <span class="day-label">ش</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 72%">
+                <span class="bar-value">۱,۳۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <span class="day-label">ی</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 88%">
+                <span class="bar-value">۱,۵۸۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <span class="day-label">د</span>
+            <div class="bar-track">
+              <div class="bar-fill over" style="width: 105%">
+                <span class="bar-value">۱,۸۹۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <span class="day-label">س</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 78%">
+                <span class="bar-value">۱,۴۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <span class="day-label">چ</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 67%">
+                <span class="bar-value">۱,۲۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <span class="day-label">پ</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 83%">
+                <span class="bar-value">۱,۵۰۰</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-row today">
+            <span class="day-label">ج</span>
+            <div class="bar-track">
+              <div class="bar-fill current" style="width: 69%">
+                <span class="bar-value">۱,۲۴۰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-limit-line">
+          <span class="limit-label">حد مجاز: ۱,۸۰۰</span>
+        </div>
+      </section>
+
+      <!-- Weight Section -->
+      <section class="weight-section">
+        <div class="section-header">
+          <h2 class="section-title">روند وزن</h2>
+          <div class="weight-change positive">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 14l5-5 5 5H7z"/>
+            </svg>
+            <span>۱.۲ کیلو کاهش</span>
+          </div>
+        </div>
+        <div class="weight-graph">
+          <div class="graph-area">
+            <svg viewBox="0 0 300 80" preserveAspectRatio="none" class="weight-line">
+              <defs>
+                <linearGradient id="weightGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                  <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0"/>
+                </linearGradient>
+              </defs>
+              <path class="area-fill" d="M0,60 Q50,55 100,50 T200,40 T300,30 L300,80 L0,80 Z" fill="url(#weightGradient)"/>
+              <path class="line-path" d="M0,60 Q50,55 100,50 T200,40 T300,30" />
+              <circle cx="300" cy="30" r="5" class="current-point"/>
+            </svg>
+          </div>
+          <div class="weight-info">
+            <div class="weight-current-box">
+              <span class="weight-number">۷۳.۳</span>
+              <span class="weight-unit">kg</span>
+            </div>
+            <div class="weight-meta">
+              <span class="weight-start">شروع: ۷۴.۵ kg</span>
+              <span class="weight-goal">هدف: ۷۰ kg</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Program Status -->
+      <section class="program-section">
+        <div class="program-card">
+          <div class="program-header">
+            <div class="program-icon">🎯</div>
+            <div class="program-title-area">
+              <h3 class="program-name">برنامه کاهش وزن</h3>
+              <span class="program-duration">۸ هفته‌ای</span>
+            </div>
+          </div>
+          <div class="program-timeline">
+            <div class="timeline-bar">
+              <div class="timeline-progress" style="width: 45%"></div>
+              <div class="timeline-marker" style="left: 45%">
+                <span class="marker-label">الان</span>
+              </div>
+            </div>
+            <div class="timeline-labels">
+              <span>شروع</span>
+              <span>هفته ۴ از ۸</span>
+              <span>پایان</span>
+            </div>
+          </div>
+          <div class="program-actions">
+            <button class="action-btn secondary">ویرایش پروفایل</button>
+            <button class="action-btn primary">جزئیات برنامه</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="/17" class="nav-item active">
+        <div class="nav-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <span>خانه</span>
+      </a>
+      <a href="/17/log.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </div>
+        <span>ثبت</span>
+      </a>
+      <a href="/17/chat.html" class="nav-item">
+        <div class="nav-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </div>
+        <span>گفتگو</span>
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

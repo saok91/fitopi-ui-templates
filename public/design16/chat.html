@@ -1,0 +1,106 @@
+<!-- Design 16: Warm Terracotta - chat.html (complete) -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فیتوپی - گفتگو با مربی</title>
+  <link rel="stylesheet" href="/design16/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app chat-app">
+    <!-- Chat Header -->
+    <header class="chat-header">
+      <div class="coach-info">
+        <div class="coach-avatar">🧡</div>
+        <div class="coach-details">
+          <span class="coach-name">مربی فیتوپی</span>
+          <span class="coach-status online">آنلاین</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Chat Messages -->
+    <main class="chat-main">
+      <div class="messages-container">
+        <div class="message coach">
+          <div class="message-bubble">
+            <p>سلام زهرا جان! 👋</p>
+            <p>امروز چطوری؟ دیدم صبحانه‌ت رو ثبت کردی، عالی بود!</p>
+          </div>
+          <span class="message-time">۸:۴۵</span>
+        </div>
+
+        <div class="message user">
+          <div class="message-bubble">
+            <p>سلام! خوبم ممنون. یکم نگرانم برای ناهار، مهمونی دعوتیم 😅</p>
+          </div>
+          <span class="message-time">۹:۱۲</span>
+        </div>
+
+        <div class="message coach">
+          <div class="message-bubble">
+            <p>آها، فهمیدم! مهمونی‌ها چالش‌برانگیزن، ولی نگران نباش. 💪</p>
+            <p>یه پیشنهاد دارم: قبل از رفتن یه میان‌وعده سبک بخور که خیلی گرسنه نباشی. بعدش هم سعی کن از همه‌چیز یه کم بکشی، نه اینکه محروم باشی.</p>
+          </div>
+          <span class="message-time">۹:۱۵</span>
+        </div>
+
+        <div class="message user">
+          <div class="message-bubble">
+            <p>ممنون! این ایده خیلی خوبه. یه سیب می‌خورم قبلش.</p>
+          </div>
+          <span class="message-time">۹:۱۸</span>
+        </div>
+
+        <div class="message coach">
+          <div class="message-bubble">
+            <p>عالیه! 🍎 سیب انتخاب خوبیه چون فیبر داره و سیر میکنه.</p>
+            <p>بعد از مهمونی هم بهم بگو چی خوردی تا با هم حساب کنیم. موفق باشی!</p>
+          </div>
+          <span class="message-time">۹:۲۰</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Chat Input -->
+    <div class="chat-input-container">
+      <div class="chat-input-wrapper">
+        <textarea class="chat-input" placeholder="پیام خود را بنویسید..." rows="1"></textarea>
+        <button class="send-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="/16" class="nav-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>خانه</span>
+      </a>
+      <a href="/16/log.html" class="nav-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        <span>ثبت</span>
+      </a>
+      <a href="/16/chat.html" class="nav-item active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span>گفتگو</span>
+      </a>
+    </nav>
+  </div>
+</body>
+</html>

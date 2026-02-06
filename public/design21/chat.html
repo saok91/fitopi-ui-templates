@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>گفتگو - طرح 21</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design21/style.css" />
+  <style>
+    .chat { display: grid; gap: 12px; }
+    .bubble {
+      background: #eef2ff;
+      padding: 12px 14px;
+      border-radius: 14px;
+      max-width: 75%;
+    }
+    .bubble.me {
+      background: #dcfce7;
+      margin-right: auto;
+    }
+    .composer {
+      position: fixed;
+      bottom: 80px;
+      right: 50%;
+      transform: translateX(50%);
+      width: min(1000px, 92%);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+    .input {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: white;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div>
+        <div class="title">مربی فیتوپی</div>
+        <div class="sub">آنلاین و آماده کمک</div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="bubble">سلام زهرا عزیز! امروز عالی پیش رفتی 👏</div>
+      <div class="bubble me">مرسی! امروز کمی استرس داشتم</div>
+      <div class="bubble">اشکالی نداره. یه قدم کوچیک: قبل میان‌وعده ۵ نفس عمیق بکش</div>
+      <div class="bubble me">حتماً امتحان می‌کنم</div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <input class="input" placeholder="پیام به مربی..." />
+    <button class="btn">ارسال</button>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="/21/">خانه</a>
+    <a href="/21/log.html">ثبت</a>
+    <a class="active" href="/21/chat.html">گفتگو</a>
+  </div>
+</body>
+</html>

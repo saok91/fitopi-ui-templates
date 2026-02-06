@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>گفتگو - طرح 25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design25/style.css" />
+  <style>
+    .chat { display: grid; gap: 12px; margin-top: 16px; }
+    .bubble { background: #1f2937; padding: 12px; border-radius: 14px; max-width: 75%; }
+    .bubble.me { background: #22c55e; color: #0b0f1a; margin-right: auto; }
+    .composer { position: fixed; bottom: 80px; right: 50%; transform: translateX(50%); width: min(1000px, 92%); display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .input { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--border); background: #0f172a; color: white; font-family: inherit; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div>
+        <div class="title">مربی فیتوپی</div>
+        <div class="sub">حالت قدرتمند</div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="bubble">امروز یک قدم کوچک عالی بود</div>
+      <div class="bubble me">مرسی، ادامه می‌دم</div>
+      <div class="bubble">فردا فقط یک وعده سالم اضافه کن</div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <input class="input" placeholder="پیام بنویس..." />
+    <button class="btn">ارسال</button>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="/25/">خانه</a>
+    <a href="/25/log.html">ثبت</a>
+    <a class="active" href="/25/chat.html">گفتگو</a>
+  </div>
+</body>
+</html>
