@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مربی - نئوبروتالیسم</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffde00;
+            --border: 3px solid #000;
+            --shadow: 6px 6px 0px #000;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 100px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            background: #fff;
+            border: var(--border);
+            padding: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            border: var(--border);
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .msg {
+            max-width: 80%;
+            padding: 15px;
+            border: var(--border);
+            margin-bottom: 20px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .msg.ai {
+            background: #54a0ff;
+            color: #fff;
+            margin-left: auto; /* RTL: pushes to left? No, align-self logic preferred but using flex parent props */
+            align-self: flex-start;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .msg.user {
+            background: #ff6b6b;
+            color: #000;
+            margin-right: auto;
+            align-self: flex-end;
+            box-shadow: -4px 4px 0px #000;
+        }
+        
+        /* Flex container for chat items */
+        .chat-flex {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-flex .ai { align-self: flex-start; }
+        .chat-flex .user { align-self: flex-end; }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-brutal {
+            flex: 1;
+            padding: 15px;
+            border: var(--border);
+            font-family: inherit;
+            font-weight: bold;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .send-brutal {
+            background: #000;
+            color: #fff;
+            border: var(--border);
+            width: 60px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #fff;
+        }
+        
+        .send-brutal:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #fff;
+        }
+
+        .nav-dock {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid transparent;
+        }
+        
+        .nav-btn.active {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            transform: rotate(-5deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>مربی شخصی</h1>
+
+    <div class="chat-box chat-flex">
+        <div class="msg ai">
+            سلام! امروز چقدر فعالیت داشتی؟
+        </div>
+        <div class="msg user">
+            سلام. حدود ۵۰۰۰ قدم راه رفتم فقط.
+        </div>
+        <div class="msg ai">
+            خوبه ولی کمه! سعی کن عصر یه ۲۰ دقیقه نرمش کنی. پایه ای؟
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" class="input-brutal" placeholder="پیام بده...">
+        <button class="send-brutal"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+    <nav class="nav-dock">
+        <a href="/13" class="nav-btn"><i class="fas fa-home"></i></a>
+        <a href="log.html" class="nav-btn"><i class="fas fa-plus"></i></a>
+        <a href="chat.html" class="nav-btn active"><i class="fas fa-comment"></i></a>
+    </nav>
+
+</body>
+</html>

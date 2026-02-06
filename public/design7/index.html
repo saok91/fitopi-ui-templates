@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی ۷: Neon Vitality - خانه</title>
+  <link rel="stylesheet" href="/design7/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/7" class="nav-item active">⚡ خانه</a>
+    <a href="/7/log.html" class="nav-item">📡 ثبت</a>
+    <a href="/7/chat.html" class="nav-item">🤖 گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">سلام، زهرا</h1>
+      <p class="subtitle">برنامه ۸ هفته‌ای — هفته سوم ⚡</p>
+    </header>
+
+    <section class="program-card">
+      <div class="program-header">
+        <h2>ACTIVE PLAN</h2>
+        <span class="program-badge">MEDIUM — ۵٪</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 37.5%"></div>
+      </div>
+      <div class="program-stats">
+        <div class="stat">
+          <span class="stat-label">PASSED</span>
+          <span class="stat-value">۳W</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">LEFT</span>
+          <span class="stat-value">۵W</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">GOAL</span>
+          <span class="stat-value">-۵٪</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <h2 class="section-title">// امروز</h2>
+      <div class="calorie-card">
+        <div class="calorie-header">
+          <span class="calorie-label">کالری دریافتی</span>
+          <span class="calorie-value">1,245</span>
+        </div>
+        <div class="calorie-progress">
+          <div class="calorie-bar">
+            <div class="calorie-fill" style="width: 62%"></div>
+          </div>
+          <span class="calorie-limit">از ۲,۰۰۰ کالری مجاز</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2 class="section-title">// کالری ۷ روز</h2>
+      <div class="chart-container">
+        <div class="bar-chart">
+          <div style="position:absolute;left:0;right:0;bottom:75%;border-top:2px dashed var(--secondary);z-index:1;opacity:0.4"></div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:50%"><span class="bar-value">۱,۰۰۰</span></div></div>
+            <span class="bar-label">شنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:85%"><span class="bar-value">۱,۷۰۰</span></div></div>
+            <span class="bar-label">یک‌شنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar over-limit" style="height:100%"><span class="bar-value">۲,۲۰۰</span></div></div>
+            <span class="bar-label">دوشنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:70%"><span class="bar-value">۱,۴۰۰</span></div></div>
+            <span class="bar-label">سه‌شنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:90%"><span class="bar-value">۱,۸۰۰</span></div></div>
+            <span class="bar-label">چهارشنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:65%"><span class="bar-value">۱,۳۰۰</span></div></div>
+            <span class="bar-label">پنج‌شنبه</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-wrapper"><div class="bar" style="height:62%"><span class="bar-value">۱,۲۴۵</span></div></div>
+            <span class="bar-label">امروز</span>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot consumed"></span> دریافتی</span>
+          <span class="legend-item"><span class="legend-dot limit"></span> سقف مجاز</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="weight-section">
+      <h2 class="section-title">// تغییرات وزن</h2>
+      <div class="weight-chart">
+        <svg class="chart" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wg7" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.15"/>
+              <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0"/>
+            </linearGradient>
+          </defs>
+          <path d="M20,120 L80,110 L140,100 L200,95 L260,88 L320,82 L380,78 L380,180 L20,180Z" fill="url(#wg7)"/>
+          <polyline fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="20,120 80,110 140,100 200,95 260,88 320,82 380,78" style="filter:drop-shadow(0 0 6px rgba(0,229,255,0.5))"/>
+          <circle cx="20" cy="120" r="4" fill="#00e5ff"/>
+          <circle cx="80" cy="110" r="4" fill="#00e5ff"/>
+          <circle cx="140" cy="100" r="4" fill="#00e5ff"/>
+          <circle cx="200" cy="95" r="4" fill="#00e5ff"/>
+          <circle cx="260" cy="88" r="4" fill="#00e5ff"/>
+          <circle cx="320" cy="82" r="4" fill="#00e5ff"/>
+          <circle cx="380" cy="78" r="6" fill="#00e5ff" style="filter:drop-shadow(0 0 8px rgba(0,229,255,0.6))"/>
+        </svg>
+        <div class="chart-labels">
+          <span>هفته ۱</span><span>هفته ۲</span><span>هفته ۳</span><span>هفته ۴</span><span>هفته ۵</span><span>هفته ۶</span><span>اکنون</span>
+        </div>
+        <div class="weight-info">
+          <div class="weight-current">
+            <span class="weight-value">72.5</span>
+            <span class="weight-unit">kg</span>
+          </div>
+          <div class="weight-change">
+            <span class="change-value negative">−۲.۳</span>
+            <span class="change-label">از شروع برنامه</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="action-btn">⚙️ ویرایش پروفایل</button>
+      <button class="action-btn">📋 ویرایش برنامه</button>
+    </section>
+  </main>
+</body>
+</html>

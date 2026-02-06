@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 4: Brutalist - گفتگو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design4/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/4" class="nav-item">خانه</a>
+    <a href="/4/log.html" class="nav-item">ثبت</a>
+    <a href="/4/chat.html" class="nav-item active">گفتگو</a>
+  </nav>
+
+  <main class="chat-container">
+    <header class="chat-header">
+      <h1 class="chat-title">مربی شما</h1>
+      <p class="chat-subtitle">همیشه در دسترس</p>
+    </header>
+
+    <div class="messages">
+      <div class="message coach">
+        <div class="message-content">
+          <p>سلام زهرا! امروز چطور بودی؟ می‌بینم که کالری‌هایت رو خوب ثبت کردی.</p>
+          <span class="message-time">۱۴:۳۰</span>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="message-content">
+          <p>سلام! امروز خوب بودم ولی استرس داشتم و بیشتر از حد معمول خوردم</p>
+          <span class="message-time">۱۵:۰۰</span>
+        </div>
+      </div>
+
+      <div class="message coach">
+        <div class="message-content">
+          <p>این کاملاً طبیعی است. مهم اینه که تو اینجا هستی و داریم با هم ادامه می‌دیم.</p>
+          <span class="message-time">۱۵:۰۲</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" placeholder="پیام...">
+      <button class="send-btn">ارسال</button>
+    </div>
+  </main>
+
+  <style>
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px;
+    }
+
+    .chat-header {
+      margin-bottom: 30px;
+      border: 4px solid #fff;
+      padding: 20px;
+      background: #000;
+    }
+
+    .chat-title {
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .chat-subtitle {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #999;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    .message {
+      display: flex;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message-content {
+      border: 4px solid #fff;
+      padding: 20px;
+      background: #000;
+      max-width: 70%;
+    }
+
+    .message.user .message-content {
+      background: #fff;
+      color: #000;
+    }
+
+    .message-content p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .message-time {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #999;
+    }
+
+    .message.user .message-time {
+      color: #666;
+    }
+
+    .chat-input-container {
+      display: flex;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 4px solid #fff;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 15px;
+      border: 4px solid #fff;
+      background: #000;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Vazirmatn', 'Space Mono', monospace;
+      outline: none;
+    }
+
+    .send-btn {
+      padding: 15px 30px;
+      background: #fff;
+      color: #000;
+      border: 4px solid #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-family: 'Vazirmatn', 'Space Mono', monospace;
+    }
+
+    .send-btn:hover {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</body>
+</html>

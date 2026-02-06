@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت - نئوبروتالیسم</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffde00;
+            --border: 3px solid #000;
+            --shadow: 6px 6px 0px #000;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-weight: 900;
+            background: #fff;
+            border: var(--border);
+            padding: 10px;
+            box-shadow: var(--shadow);
+            display: inline-block;
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            background: #fff;
+            border: var(--border);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #000;
+            transition: 0.1s;
+        }
+
+        .tab.active {
+            background: #000;
+            color: #fff;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 15px;
+            border: var(--border);
+            font-family: inherit;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            box-shadow: 4px 4px 0px #000;
+            outline: none;
+        }
+        
+        .input-box:focus {
+            background: #e0f7fa;
+        }
+
+        .big-btn {
+            width: 100%;
+            padding: 20px;
+            background: #ff6b6b;
+            color: #000;
+            border: var(--border);
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-transform: uppercase;
+        }
+        
+        .big-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        .log-list {
+            margin-top: 40px;
+        }
+
+        .log-entry {
+            background: #fff;
+            border: var(--border);
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: #54a0ff;
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .nav-dock {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid transparent;
+        }
+        
+        .nav-btn.active {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ثبت جدید</h1>
+
+    <div class="tab-bar">
+        <button class="tab active" onclick="setTab('food')">غذا</button>
+        <button class="tab" onclick="setTab('activity')">ورزش</button>
+        <button class="tab" onclick="setTab('weight')">وزن</button>
+    </div>
+
+    <div id="food-form">
+        <div style="background: #fff; border: var(--border); padding: 20px; margin-bottom: 20px; text-align: center; cursor: pointer; border-style: dashed;">
+            <i class="fas fa-camera" style="font-size: 3rem;"></i>
+            <p><strong>عکس بگیر</strong></p>
+        </div>
+        <textarea class="input-box" rows="3" placeholder="تایپ کن چی خوردی..."></textarea>
+        <button class="big-btn">ثبت کن</button>
+    </div>
+
+    <div class="log-list">
+        <h3>لیست امروز</h3>
+        
+        <div class="log-entry">
+            <div style="display: flex; align-items: center;">
+                <div class="icon-box"><i class="fas fa-utensils"></i></div>
+                <div>
+                    <strong>ناهار</strong>
+                    <br>
+                    <small>خورشت قیمه - 700 کالری</small>
+                </div>
+            </div>
+            <button style="background:none; border:none; cursor:pointer;"><i class="fas fa-trash"></i></button>
+        </div>
+    </div>
+
+    <nav class="nav-dock">
+        <a href="/13" class="nav-btn"><i class="fas fa-home"></i></a>
+        <a href="log.html" class="nav-btn active"><i class="fas fa-plus"></i></a>
+        <a href="chat.html" class="nav-btn"><i class="fas fa-comment"></i></a>
+    </nav>
+
+    <script>
+        function setTab(t) {
+            document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

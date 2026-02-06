@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی ۹: Art Deco - خانه</title>
+  <link rel="stylesheet" href="/design9/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/9" class="nav-item active">خانه</a>
+    <a href="/9/log.html" class="nav-item">ثبت</a>
+    <a href="/9/chat.html" class="nav-item">گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">سلام، زهرا</h1>
+      <p class="subtitle">هفته سوم · برنامه ۸ هفته‌ای</p>
+      <div class="deco-line"></div>
+    </header>
+
+    <section class="program-card">
+      <div class="program-header">
+        <h2>برنامه فعال</h2>
+        <span class="program-badge">متوسط ۵٪</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 37.5%"></div>
+      </div>
+      <div class="program-stats">
+        <div class="stat">
+          <span class="stat-label">گذشته</span>
+          <span class="stat-value">3W</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">باقیمانده</span>
+          <span class="stat-value">5W</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">هدف</span>
+          <span class="stat-value">-5%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <h2 class="section-title">امروز</h2>
+      <div class="calorie-card">
+        <div class="calorie-header">
+          <span class="calorie-label">کالری دریافتی</span>
+          <span class="calorie-value">1,245</span>
+        </div>
+        <div class="calorie-progress">
+          <div class="calorie-bar">
+            <div class="calorie-fill" style="width: 62%"></div>
+          </div>
+          <span class="calorie-limit">از ۲,۰۰۰ کالری مجاز</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2 class="section-title">کالری ۷ روز</h2>
+      <div class="chart-container">
+        <div class="bar-chart">
+          <div style="position:absolute;left:0;right:0;bottom:75%;border-top:2px dashed var(--secondary);z-index:1;opacity:0.3"></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:50%"><span class="bar-value">۱,۰۰۰</span></div></div><span class="bar-label">شنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:85%"><span class="bar-value">۱,۷۰۰</span></div></div><span class="bar-label">یکشنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar over-limit" style="height:100%"><span class="bar-value">۲,۲۰۰</span></div></div><span class="bar-label">دوشنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:70%"><span class="bar-value">۱,۴۰۰</span></div></div><span class="bar-label">سه‌شنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:90%"><span class="bar-value">۱,۸۰۰</span></div></div><span class="bar-label">چهارشنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:65%"><span class="bar-value">۱,۳۰۰</span></div></div><span class="bar-label">پنجشنبه</span></div>
+          <div class="bar-group"><div class="bar-wrapper"><div class="bar" style="height:62%"><span class="bar-value">۱,۲۴۵</span></div></div><span class="bar-label">امروز</span></div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot consumed"></span> دریافتی</span>
+          <span class="legend-item"><span class="legend-dot limit"></span> سقف مجاز</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="weight-section">
+      <h2 class="section-title">تغییرات وزن</h2>
+      <div class="weight-chart">
+        <svg class="chart" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wg9" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#f0c844;stop-opacity:0.12"/>
+              <stop offset="100%" style="stop-color:#f0c844;stop-opacity:0"/>
+            </linearGradient>
+          </defs>
+          <path d="M20,120 L80,110 L140,100 L200,95 L260,88 L320,82 L380,78 L380,180 L20,180Z" fill="url(#wg9)"/>
+          <polyline fill="none" stroke="#f0c844" stroke-width="2.5" stroke-linecap="square" points="20,120 80,110 140,100 200,95 260,88 320,82 380,78"/>
+          <rect x="17" y="117" width="6" height="6" fill="#f0c844"/>
+          <rect x="77" y="107" width="6" height="6" fill="#f0c844"/>
+          <rect x="137" y="97" width="6" height="6" fill="#f0c844"/>
+          <rect x="197" y="92" width="6" height="6" fill="#f0c844"/>
+          <rect x="257" y="85" width="6" height="6" fill="#f0c844"/>
+          <rect x="317" y="79" width="6" height="6" fill="#f0c844"/>
+          <rect x="375" y="73" width="10" height="10" fill="#f0c844" stroke="#1a1a2e" stroke-width="2"/>
+        </svg>
+        <div class="chart-labels">
+          <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>NOW</span>
+        </div>
+        <div class="weight-info">
+          <div class="weight-current">
+            <span class="weight-value">72.5</span>
+            <span class="weight-unit">KG</span>
+          </div>
+          <div class="weight-change">
+            <span class="change-value negative">−2.3</span>
+            <span class="change-label">از شروع برنامه</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="action-btn">◇ ویرایش پروفایل</button>
+      <button class="action-btn">◇ ویرایش برنامه</button>
+    </section>
+  </main>
+</body>
+</html>

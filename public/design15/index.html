@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خانه - بازی</title>
+    <!-- Pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Vazirmatn for Persian fallback because pixel font might not support FA -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #202020;
+            --green: #44bd32;
+            --red: #c23616;
+            --yellow: #fbc531;
+            --blue: #0097e6;
+            --white: #dcdde1;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif; /* Fallback for Persian text */
+            background-color: var(--bg-color);
+            color: var(--white);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 90px;
+            min-height: 100vh;
+            image-rendering: pixelated;
+        }
+
+        /* Use Press Start 2P for numbers/English */
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive; 
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--yellow);
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 30px;
+            border: 4px solid var(--white);
+            padding: 10px;
+            background: #2f3640;
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .pixel-card {
+            background: #353b48;
+            border: 4px solid var(--white);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 6px 6px 0 #000;
+            position: relative;
+        }
+
+        .pixel-card::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px dashed rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
+
+        .hp-bar-container {
+            background: #000;
+            border: 2px solid var(--white);
+            height: 20px;
+            margin-top: 5px;
+            position: relative;
+        }
+
+        .hp-bar-fill {
+            height: 100%;
+            background: var(--red);
+            width: 65%;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .pixel-btn {
+            background: var(--blue);
+            color: white;
+            border: 4px solid var(--white);
+            padding: 10px;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 #000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .pixel-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #2f3640;
+            border-top: 4px solid var(--white);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+        .nav-item {
+            color: var(--white);
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        .nav-item.active {
+            color: var(--yellow);
+        }
+
+        .icon-pixel {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            display: block;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>PLAYER 1</h1>
+
+    <!-- Player Stats -->
+    <div class="pixel-card">
+        <h3 style="color: var(--green); margin-top: 0;">وضعیت فعلی (HP)</h3>
+        
+        <div style="margin-bottom: 10px;">
+            <span>CALORIES</span>
+            <div class="hp-bar-container">
+                <div class="hp-bar-fill" style="width: 65%; background: var(--yellow);"></div>
+            </div>
+            <div style="text-align: left; font-size: 0.8rem; margin-top: 5px;" class="pixel-font">1250 / 2000</div>
+        </div>
+
+        <div>
+            <span>WEIGHT</span>
+            <div class="hp-bar-container">
+                <div class="hp-bar-fill" style="width: 80%; background: var(--blue);"></div>
+            </div>
+            <div style="text-align: left; font-size: 0.8rem; margin-top: 5px;" class="pixel-font">85 KG</div>
+        </div>
+    </div>
+
+    <!-- Active Quest -->
+    <div class="pixel-card">
+        <h3 style="color: var(--red); margin-top: 0;">مأموریت فعال</h3>
+        <p>برنامه کاهش وزن</p>
+        <div class="pixel-font" style="color: var(--yellow); text-align: center; margin: 10px 0;">
+            LEVEL 24
+        </div>
+        <div style="text-align: center;">
+            <button class="pixel-btn">مشاهده جزئیات</button>
+        </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="pixel-card">
+        <h3 style="margin-top: 0;">آمار هفته</h3>
+        <canvas id="pixelChart" height="200"></canvas>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="/15" class="nav-item active">
+            <i class="fas fa-dungeon icon-pixel"></i>
+            HOME
+        </a>
+        <a href="log.html" class="nav-item">
+            <i class="fas fa-scroll icon-pixel"></i>
+            QUESTS
+        </a>
+        <a href="chat.html" class="nav-item">
+            <i class="fas fa-ghost icon-pixel"></i>
+            NPC
+        </a>
+    </nav>
+
+    <script>
+        // Disable anti-aliasing for pixel look
+        Chart.defaults.font.family = "'Press Start 2P', cursive";
+        
+        const ctx = document.getElementById('pixelChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['S', 'S', 'M', 'T', 'W', 'T', 'F'],
+                datasets: [{
+                    label: 'XP',
+                    data: [1800, 1900, 1750, 1600, 2100, 1850, 1250],
+                    backgroundColor: '#44bd32',
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { 
+                        grid: { display: false, color: '#fff' },
+                        ticks: { color: '#fff' }
+                    },
+                    y: { display: false }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

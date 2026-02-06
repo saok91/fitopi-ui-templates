@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خانه - هولوگرافیک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f0c29;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-cyan: #00f2ff;
+            --neon-pink: #ff00de;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lalezar', cursive;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--neon-cyan), var(--neon-pink));
+            padding: 2px;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #000;
+            object-fit: cover;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        .progress-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(var(--neon-cyan) 0% 65%, rgba(255,255,255,0.1) 65% 100%);
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+        
+        .progress-inner {
+            width: 140px;
+            height: 140px;
+            background: #1a1a2e;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-val {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-item {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+        
+        .nav-item.active {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.8);
+        }
+
+        .nav-text {
+            font-size: 0.7rem;
+        }
+        
+        .glitch-btn {
+            background: transparent;
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 5px 15px;
+            font-family: 'Vazirmatn';
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 0 0 5px var(--neon-pink);
+            box-shadow: 0 0 5px var(--neon-pink);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1 class="glow-text" style="font-size: 2rem; margin: 0;">داشبورد</h1>
+            <p style="color: var(--text-muted); margin: 0;">خوش آمدید، کاربر</p>
+        </div>
+        <div class="profile-pic">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E" alt="User">
+        </div>
+    </div>
+
+    <!-- Today's Stats -->
+    <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <h3>امروز</h3>
+            <button class="glitch-btn">ویرایش</button>
+        </div>
+        
+        <div class="progress-circle">
+            <div class="progress-inner">
+                <span style="font-size: 2.5rem; font-family: 'Lalezar'; color: var(--neon-cyan);">1250</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">کالری</span>
+            </div>
+        </div>
+        
+        <div class="stat-row">
+            <div class="stat">
+                <span class="stat-val" style="color: var(--neon-pink);">1800</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">هدف</span>
+            </div>
+            <div class="stat">
+                <span class="stat-val" style="color: #00ff9d;">550</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">باقی‌مانده</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="glass-card">
+        <h3 style="margin-top: 0;">نمودار هفتگی</h3>
+        <canvas id="holoChart" height="200"></canvas>
+    </div>
+
+    <div class="glass-card">
+        <h3 style="margin-top: 0;">وزن</h3>
+        <canvas id="holoWeight" height="150"></canvas>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="/12" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span class="nav-text">خانه</span>
+        </a>
+        <a href="log.html" class="nav-item">
+            <i class="fas fa-plus-square"></i>
+            <span class="nav-text">ثبت</span>
+        </a>
+        <a href="chat.html" class="nav-item">
+            <i class="fas fa-robot"></i>
+            <span class="nav-text">مربی</span>
+        </a>
+    </nav>
+
+    <script>
+        // Custom plugin for glow effect
+        Chart.defaults.color = 'rgba(255, 255, 255, 0.7)';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+
+        const ctx = document.getElementById('holoChart').getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(0, 242, 255, 0.5)');
+        gradient.addColorStop(1, 'rgba(0, 242, 255, 0)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+                datasets: [{
+                    label: 'کالری',
+                    data: [1800, 1900, 1750, 1600, 2100, 1850, 1250],
+                    borderColor: '#00f2ff',
+                    backgroundColor: gradient,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#00f2ff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' } }
+                }
+            }
+        });
+
+        const ctxW = document.getElementById('holoWeight').getContext('2d');
+        new Chart(ctxW, {
+            type: 'bar',
+            data: {
+                labels: ['ه۱', 'ه۲', 'ه۳', 'ه۴'],
+                datasets: [{
+                    label: 'وزن',
+                    data: [85, 84, 83, 82],
+                    backgroundColor: '#ff00de',
+                    borderRadius: 5,
+                    barThickness: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی ۶: Organic Wellness - ثبت</title>
+  <link rel="stylesheet" href="/design6/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/6" class="nav-item">🏠 خانه</a>
+    <a href="/6/log.html" class="nav-item active">📝 ثبت</a>
+    <a href="/6/chat.html" class="nav-item">💬 گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">ثبت اطلاعات</h1>
+      <p class="subtitle">کالری، فعالیت یا وزن خود را ثبت کنید</p>
+    </header>
+
+    <div class="log-tabs">
+      <button class="tab-btn active" data-tab="calorie">🍽️ کالری</button>
+      <button class="tab-btn" data-tab="activity">🏃 فعالیت</button>
+      <button class="tab-btn" data-tab="weight">⚖️ وزن</button>
+    </div>
+
+    <div class="tab-content active" id="calorie">
+      <div class="log-card">
+        <h2 class="card-title">ثبت کالری</h2>
+        <div class="input-methods">
+          <button class="method-btn">
+            <span class="method-icon">📷</span>
+            <span>ارسال عکس</span>
+          </button>
+          <button class="method-btn">
+            <span class="method-icon">✍️</span>
+            <span>نوشتن غذا</span>
+          </button>
+        </div>
+        <textarea class="input-text" placeholder="مثال: یک بشقاب برنج با مرغ و سالاد شیرازی"></textarea>
+        <button class="submit-btn">🌿 ثبت کالری</button>
+      </div>
+
+      <div class="recent-entries">
+        <h3 class="entries-title">ثبت‌های امروز</h3>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">صبحانه: نان سنگک و پنیر و گردو</span>
+            <span class="entry-time">امروز ۸:۳۰</span>
+          </div>
+          <div class="entry-calories">۳۸۰ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">ناهار: ماکارونی و سالاد</span>
+            <span class="entry-time">امروز ۱۳:۱۵</span>
+          </div>
+          <div class="entry-calories">۵۲۰ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">میان‌وعده: یک عدد سیب</span>
+            <span class="entry-time">امروز ۱۶:۰۰</span>
+          </div>
+          <div class="entry-calories">۹۵ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="activity">
+      <div class="log-card">
+        <h2 class="card-title">ثبت فعالیت</h2>
+        <textarea class="input-text" placeholder="مثال: ۳۰ دقیقه پیاده‌روی تند در پارک"></textarea>
+        <button class="submit-btn">🏃 ثبت فعالیت</button>
+      </div>
+      <div class="recent-entries">
+        <h3 class="entries-title">فعالیت‌های اخیر</h3>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">پیاده‌روی ۳۰ دقیقه</span>
+            <span class="entry-time">دیروز ۱۸:۰۰</span>
+          </div>
+          <div class="entry-calories">−۱۵۰ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">یوگا ۴۵ دقیقه</span>
+            <span class="entry-time">۲ روز پیش</span>
+          </div>
+          <div class="entry-calories">−۲۰۰ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="weight">
+      <div class="log-card">
+        <h2 class="card-title">ثبت وزن</h2>
+        <div class="weight-input-group">
+          <input type="number" class="weight-input" placeholder="۷۲.۵" step="0.1">
+          <span class="weight-unit">کیلوگرم</span>
+        </div>
+        <button class="submit-btn">⚖️ ثبت وزن</button>
+      </div>
+      <div class="recent-entries">
+        <h3 class="entries-title">تاریخچه وزن</h3>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">وزن</span>
+            <span class="entry-time">امروز ۷:۰۰</span>
+          </div>
+          <div class="entry-calories">۷۲.۵ کیلوگرم</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">وزن</span>
+            <span class="entry-time">هفته گذشته</span>
+          </div>
+          <div class="entry-calories">۷۳.۲ کیلوگرم</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

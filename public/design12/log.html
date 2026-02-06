@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت - هولوگرافیک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0c29;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-cyan: #00f2ff;
+            --neon-pink: #ff00de;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: 'Lalezar', cursive;
+            text-align: center;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            margin-bottom: 30px;
+        }
+
+        .toggle-container {
+            display: flex;
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            padding: 5px;
+            margin-bottom: 30px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .toggle-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: var(--neon-cyan);
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .glass-input {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            font-family: inherit;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.1);
+            outline: none;
+            transition: 0.3s;
+        }
+        
+        .glass-input:focus {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3), inset 0 0 10px rgba(0, 242, 255, 0.2);
+        }
+
+        .neon-btn {
+            width: 100%;
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-family: 'Lalezar';
+            cursor: pointer;
+            text-shadow: 0 0 5px var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: 0.3s;
+        }
+
+        .neon-btn:hover, .neon-btn:active {
+            background: var(--neon-pink);
+            color: white;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .log-item {
+            background: var(--glass-bg);
+            border-left: 3px solid var(--neon-cyan);
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-item {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-item.active {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.8);
+        }
+
+        .nav-text { font-size: 0.7rem; }
+
+        .scan-frame {
+            border: 2px dashed var(--neon-cyan);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            color: var(--neon-cyan);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .scan-frame:hover {
+            background: rgba(0, 242, 255, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>ثبت داده</h1>
+
+    <div class="toggle-container">
+        <button class="toggle-btn active" onclick="show('food')">غذا</button>
+        <button class="toggle-btn" onclick="show('activity')">فعالیت</button>
+        <button class="toggle-btn" onclick="show('weight')">وزن</button>
+    </div>
+
+    <div id="food-panel">
+        <div class="scan-frame">
+            <i class="fas fa-camera" style="font-size: 2rem; margin-bottom: 10px;"></i>
+            <br>
+            اسکن غذا با AI
+        </div>
+        <textarea class="glass-input" rows="3" placeholder="یا اینجا بنویسید..."></textarea>
+        <button class="neon-btn">پردازش و ثبت</button>
+    </div>
+
+    <div id="activity-panel" style="display: none;">
+        <textarea class="glass-input" rows="3" placeholder="توضیحات فعالیت..."></textarea>
+        <button class="neon-btn" style="border-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan);">ثبت فعالیت</button>
+    </div>
+
+    <div id="weight-panel" style="display: none;">
+        <input type="number" class="glass-input" placeholder="85.5">
+        <button class="neon-btn">بروزرسانی وزن</button>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <h3 style="color: var(--text-muted); border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">تاریخچه امروز</h3>
+        
+        <div class="log-item">
+            <div>
+                <div style="color: white; font-weight: bold;">قهوه و کیک</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">250 کالری</div>
+            </div>
+            <div>
+                <i class="fas fa-times" style="color: #ff4757; cursor: pointer;"></i>
+            </div>
+        </div>
+
+        <div class="log-item" style="border-color: var(--neon-pink);">
+            <div>
+                <div style="color: white; font-weight: bold;">دویدن</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">300 کالری (سوزانده شده)</div>
+            </div>
+            <div>
+                <i class="fas fa-times" style="color: #ff4757; cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="/12" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span class="nav-text">خانه</span>
+        </a>
+        <a href="log.html" class="nav-item active">
+            <i class="fas fa-plus-square"></i>
+            <span class="nav-text">ثبت</span>
+        </a>
+        <a href="chat.html" class="nav-item">
+            <i class="fas fa-robot"></i>
+            <span class="nav-text">مربی</span>
+        </a>
+    </nav>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            ['food', 'activity', 'weight'].forEach(p => document.getElementById(p+'-panel').style.display = 'none');
+            document.getElementById(id+'-panel').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

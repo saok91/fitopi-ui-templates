@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خانه - نئوبروتالیسم</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f7f0e9; /* Off-white */
+            --primary: #ff9f43; /* Orange */
+            --secondary: #54a0ff; /* Blue */
+            --accent: #ff6b6b; /* Red */
+            --border: 3px solid #000;
+            --shadow: 6px 6px 0px #000;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #ffde00; /* Bright Yellow BG */
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: #fff;
+            border: var(--border);
+            padding: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .brutal-card {
+            background: #fff;
+            border: var(--border);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.1s;
+        }
+        
+        .brutal-card:active {
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .brutal-card.pink { background-color: #ff9ff3; }
+        .brutal-card.blue { background-color: #54a0ff; }
+        .brutal-card.green { background-color: #00d2d3; }
+
+        .stat-box {
+            border: var(--border);
+            padding: 10px;
+            background: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            height: 25px;
+            background: #fff;
+            border: var(--border);
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #000;
+            width: 65%;
+        }
+
+        .nav-dock {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid transparent;
+        }
+        
+        .nav-btn.active {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            transform: rotate(-5deg);
+        }
+
+        .circle-stat {
+            width: 120px;
+            height: 120px;
+            border: var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .tag {
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            transform: rotate(-2deg);
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1 style="margin:0; font-size: 1.5rem;">سلام رئیس!</h1>
+        <div class="avatar"></div>
+    </div>
+
+    <!-- Main Stats -->
+    <div class="brutal-card pink">
+        <div class="tag">وضعیت امروز</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="circle-stat">
+                <span style="font-size: 2rem; font-weight: 900;">1250</span>
+                <span style="font-size: 0.8rem;">CALORIES</span>
+            </div>
+            <div style="flex: 1; margin-right: 20px;">
+                <div class="stat-box" style="margin-bottom: 10px;">
+                    هدف: 2000
+                </div>
+                <div class="stat-box" style="background: #000; color: #fff;">
+                    مانده: 750
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Plan -->
+    <div class="brutal-card green">
+        <h3 style="margin: 0 0 10px 0;">برنامه لاغری</h3>
+        <p style="margin: 0; font-weight: bold;">روز 24 / 45</p>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="brutal-card">
+        <h3 style="background: #000; color: #fff; display: inline-block; padding: 5px 10px; margin-top: 0;">نمودار هفته</h3>
+        <canvas id="brutalChart" height="200"></canvas>
+    </div>
+
+    <nav class="nav-dock">
+        <a href="/13" class="nav-btn active"><i class="fas fa-home"></i></a>
+        <a href="log.html" class="nav-btn"><i class="fas fa-plus"></i></a>
+        <a href="chat.html" class="nav-btn"><i class="fas fa-comment"></i></a>
+    </nav>
+
+    <script>
+        const ctx = document.getElementById('brutalChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+                datasets: [{
+                    label: 'CAL',
+                    data: [1800, 1900, 1750, 1600, 2100, 1850, 1250],
+                    backgroundColor: '#000',
+                    borderColor: '#000',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { 
+                        grid: { display: false, drawBorder: true, borderColor: '#000', lineWidth: 3 },
+                        ticks: { color: '#000', font: { weight: 'bold' } }
+                    },
+                    y: { display: false }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

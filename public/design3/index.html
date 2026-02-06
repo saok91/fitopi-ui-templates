@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 3: Organic - خانه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design3/styles.css">
+</head>
+<body>
+  <div class="organic-bg"></div>
+  
+  <nav class="nav">
+    <a href="/3" class="nav-item active">خانه</a>
+    <a href="/3/log.html" class="nav-item">ثبت</a>
+    <a href="/3/chat.html" class="nav-item">گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">سلام، زهرا</h1>
+      <p class="subtitle">برنامه ۸ هفته‌ای شما - هفته ۳</p>
+    </header>
+
+    <section class="program-card">
+      <div class="program-header">
+        <h2>برنامه فعال</h2>
+        <span class="program-badge">متوسط</span>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 37.5%"></div>
+        </div>
+        <div class="progress-text">۳۷.۵٪ تکمیل شده</div>
+      </div>
+      <div class="program-stats">
+        <div class="stat">
+          <span class="stat-value">۳</span>
+          <span class="stat-label">هفته گذشته</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">۵</span>
+          <span class="stat-label">هفته باقی</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">۵٪</span>
+          <span class="stat-label">هدف کاهش</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <h2 class="section-title">امروز</h2>
+      <div class="calorie-card">
+        <div class="calorie-visual">
+          <div class="calorie-ring">
+            <svg class="ring-svg" viewBox="0 0 120 120">
+              <circle class="ring-bg" cx="60" cy="60" r="50" fill="none" stroke="#e8d5c4" stroke-width="8"/>
+              <circle class="ring-progress" cx="60" cy="60" r="50" fill="none" stroke="#8b6f47" stroke-width="8" 
+                      stroke-dasharray="314" stroke-dashoffset="119" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="ring-content">
+              <span class="calorie-value">۱,۲۴۵</span>
+              <span class="calorie-label">کالری</span>
+            </div>
+          </div>
+        </div>
+        <div class="calorie-info-text">
+          <p>از ۲,۰۰۰ کالری مجاز</p>
+          <p class="remaining">۷۵۵ کالری باقی مانده</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2 class="section-title">کالری ۷ روز اخیر</h2>
+      <div class="chart-container">
+        <div class="chart-area">
+          <svg class="chart-line" viewBox="0 0 400 200">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#d4a574;stop-opacity:0.3" />
+                <stop offset="100%" style="stop-color:#d4a574;stop-opacity:0" />
+              </linearGradient>
+            </defs>
+            <path class="area" d="M 20,180 L 80,150 L 140,120 L 200,100 L 260,110 L 320,90 L 380,80 L 380,200 L 20,200 Z" fill="url(#gradient)"/>
+            <polyline class="line" points="20,180 80,150 140,120 200,100 260,110 320,90 380,80" 
+                      fill="none" stroke="#8b6f47" stroke-width="3"/>
+            <circle class="dot" cx="20" cy="180" r="5" fill="#8b6f47"/>
+            <circle class="dot" cx="80" cy="150" r="5" fill="#8b6f47"/>
+            <circle class="dot" cx="140" cy="120" r="5" fill="#8b6f47"/>
+            <circle class="dot" cx="200" cy="100" r="5" fill="#8b6f47"/>
+            <circle class="dot" cx="260" cy="110" r="5" fill="#8b6f47"/>
+            <circle class="dot" cx="320" cy="90" r="5" fill="#8b6f47"/>
+            <circle class="dot active" cx="380" cy="80" r="7" fill="#d4a574"/>
+          </svg>
+        </div>
+        <div class="chart-labels">
+          <span>شنبه</span>
+          <span>یکشنبه</span>
+          <span>دوشنبه</span>
+          <span>سه‌شنبه</span>
+          <span>چهارشنبه</span>
+          <span>پنج‌شنبه</span>
+          <span>امروز</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="weight-section">
+      <h2 class="section-title">تغییرات وزن</h2>
+      <div class="weight-card">
+        <div class="weight-display">
+          <div class="weight-value">۷۲.۵</div>
+          <div class="weight-unit">کیلوگرم</div>
+        </div>
+        <div class="weight-change">
+          <span class="change-indicator negative">-۲.۳</span>
+          <span class="change-label">کیلوگرم از شروع</span>
+        </div>
+        <div class="weight-timeline">
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-dot active"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="action-btn">ویرایش پروفایل</button>
+      <button class="action-btn">ویرایش برنامه</button>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روزنامه سلامتی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-paper: #fdfbf7;
+            --ink: #2c2c2c;
+            --border: 1px solid #2c2c2c;
+        }
+
+        body {
+            font-family: 'Noto Naskh Arabic', serif;
+            background-color: var(--bg-paper);
+            color: var(--ink);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .date-line {
+            text-align: center;
+            border-bottom: 1px double var(--ink);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .section-title {
+            background: var(--ink);
+            color: var(--bg-paper);
+            padding: 5px 10px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .paper-card {
+            border: var(--border);
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #fff;
+        }
+
+        .columns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .col { flex: 1; text-align: center; border-left: 1px solid #ccc; }
+        .col:last-child { border-left: none; }
+
+        .big-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-paper);
+            border-top: 2px solid var(--ink);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--ink);
+            text-align: center;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+        
+        .nav-link.active {
+            opacity: 1;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .nav-icon {
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>خبرنامه سلامتی</h1>
+    <div class="date-line">جمعه، ۱۶ بهمن ۱۴۰۵ • نسخه صبحگاهی</div>
+
+    <div class="paper-card">
+        <div class="section-title">تیتر اول: کالری</div>
+        <div style="display: flex; align-items: flex-end;">
+            <div style="flex: 2;">
+                <span class="big-number">۱۲۵۰</span>
+                <p style="margin: 0; font-size: 0.9rem;">کالری مصرف شده تا این لحظه. کارشناسان می‌گویند هنوز جا برای شام دارید.</p>
+            </div>
+            <div style="flex: 1; text-align: center; border: 1px solid #000; padding: 10px;">
+                <small>باقی‌مانده</small>
+                <br>
+                <strong>۵۵۰</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="col">
+            <div class="section-title" style="font-size: 0.8rem;">وزن</div>
+            <span class="big-number">۸۵.۰</span>
+            <small>کیلوگرم</small>
+        </div>
+        <div class="col">
+            <div class="section-title" style="font-size: 0.8rem;">قدم</div>
+            <span class="big-number">۶,۲۳۰</span>
+            <small>گام</small>
+        </div>
+    </div>
+
+    <div class="paper-card" style="margin-top: 20px;">
+        <div class="section-title">تحلیل هفتگی</div>
+        <canvas id="paperChart" height="150"></canvas>
+        <p style="font-size: 0.8rem; text-align: justify; margin-top: 10px; columns: 2;">
+            طبق نمودار فوق، روند مصرف کالری در روزهای اخیر نوسان داشته است. روز سه شنبه بیشترین مصرف ثبت شده است که احتمالاً به دلیل مهمانی بوده است.
+        </p>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="/14" class="nav-link active">
+            <i class="fas fa-home nav-icon"></i>
+            خانه
+        </a>
+        <a href="log.html" class="nav-link">
+            <i class="fas fa-pen-fancy nav-icon"></i>
+            ثبت
+        </a>
+        <a href="chat.html" class="nav-link">
+            <i class="fas fa-comment-alt nav-icon"></i>
+            گفتگو
+        </a>
+    </nav>
+
+    <script>
+        const ctx = document.getElementById('paperChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+                datasets: [{
+                    label: 'کالری',
+                    data: [1800, 1900, 1750, 1600, 2100, 1850, 1250],
+                    borderColor: '#2c2c2c',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    borderWidth: 1,
+                    pointBackgroundColor: '#2c2c2c',
+                    pointRadius: 3,
+                    tension: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: '#e0e0e0', borderDash: [5, 5] } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

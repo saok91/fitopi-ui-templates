@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 2: Maximalist - گفتگو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design2/styles.css">
+</head>
+<body>
+  <div class="bg-animation"></div>
+  
+  <nav class="nav">
+    <a href="/2" class="nav-item">🏠 خانه</a>
+    <a href="/2/log.html" class="nav-item">➕ ثبت</a>
+    <a href="/2/chat.html" class="nav-item active">💬 گفتگو</a>
+  </nav>
+
+  <main class="chat-container">
+    <header class="chat-header">
+      <h1 class="chat-title">مربی شما 🤖</h1>
+      <p class="chat-subtitle">همیشه در دسترس برای راهنمایی</p>
+    </header>
+
+    <div class="messages">
+      <div class="message coach">
+        <div class="message-avatar">👤</div>
+        <div class="message-content">
+          <p>سلام زهرا! امروز چطور بودی؟ می‌بینم که کالری‌هایت رو خوب ثبت کردی. عالیه! 💪</p>
+          <span class="message-time">امروز ۱۴:۳۰</span>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="message-content">
+          <p>سلام! امروز خوب بودم ولی استرس داشتم و بیشتر از حد معمول خوردم</p>
+          <span class="message-time">امروز ۱۵:۰۰</span>
+        </div>
+      </div>
+
+      <div class="message coach">
+        <div class="message-avatar">👤</div>
+        <div class="message-content">
+          <p>این کاملاً طبیعی است و اتفاق می‌افته. مهم اینه که تو اینجا هستی و داریم با هم ادامه می‌دیم. فردا یک قدم کوچک برداریم: صبحانه رو کامل بخور تا در طول روز کمتر احساس گرسنگی کنی.</p>
+          <span class="message-time">امروز ۱۵:۰۲</span>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="message-content">
+          <p>ممنون از حمایتت. فردا حتماً این کار رو انجام می‌دم</p>
+          <span class="message-time">امروز ۱۵:۰۵</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" placeholder="پیام خود را بنویسید...">
+      <button class="send-btn">🚀</button>
+    </div>
+  </main>
+
+  <style>
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      height: calc(100vh - 90px);
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chat-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .chat-title {
+      font-family: 'Bungee', cursive;
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    }
+
+    .chat-subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    .message {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    .message.user {
+      flex-direction: row-reverse;
+    }
+
+    .message-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .message-content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 18px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 70%;
+      border: 2px solid #ff6b6b;
+    }
+
+    .message.user .message-content {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: #667eea;
+    }
+
+    .message-content p {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .message-time {
+      font-size: 11px;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    .chat-input-container {
+      display: flex;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 3px solid rgba(255,255,255,0.3);
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 15px 20px;
+      border: 3px solid rgba(255,255,255,0.5);
+      border-radius: 25px;
+      font-size: 16px;
+      font-family: 'Fredoka', sans-serif;
+      outline: none;
+      background: rgba(255,255,255,0.95);
+      color: #667eea;
+      font-weight: 500;
+    }
+
+    .chat-input:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    }
+
+    .send-btn {
+      padding: 15px 25px;
+      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .send-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    }
+  </style>
+</body>
+</html>

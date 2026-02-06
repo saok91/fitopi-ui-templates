@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت - کلی‌مرفیسم</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --card-bg: #f0f4f8;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 90px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-weight: bold;
+            box-shadow: 8px 8px 16px #cbced1, -8px -8px 16px #ffffff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            box-shadow: inset 8px 8px 16px #cbced1, inset -8px -8px 16px #ffffff;
+        }
+
+        .clay-input {
+            width: 100%;
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+            font-family: inherit;
+            color: var(--text-main);
+            box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #ffffff;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        
+        .clay-input:focus {
+             box-shadow: inset 8px 8px 16px #cbced1, inset -8px -8px 16px #ffffff;
+        }
+
+        .action-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            font-weight: bold;
+            box-shadow: 10px 10px 20px rgba(108, 92, 231, 0.4), -10px -10px 20px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .action-btn:active {
+            box-shadow: inset 5px 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .clay-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 20px 20px 60px #cbced1, -20px -20px 60px #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .entry-list {
+            margin-top: 40px;
+        }
+        
+        .entry-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 5px 5px 10px #cbced1, -5px -5px 10px #ffffff;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background-color: var(--card-bg);
+            border-radius: 50px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 10px 10px 30px #cbced1, -10px -10px 30px #ffffff;
+            z-index: 100;
+        }
+
+        .nav-item {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .camera-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--accent);
+            font-size: 1.5rem;
+            box-shadow: 8px 8px 16px #cbced1, -8px -8px 16px #ffffff;
+            margin: 0 auto 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ثبت فعالیت</h1>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('food')">غذا</button>
+        <button class="tab-btn" onclick="switchTab('activity')">فعالیت</button>
+        <button class="tab-btn" onclick="switchTab('weight')">وزن</button>
+    </div>
+
+    <div id="food-panel">
+        <div class="camera-btn">
+            <i class="fas fa-camera"></i>
+        </div>
+        <textarea class="clay-input" rows="3" placeholder="مثلاً: یک سیب و یک لیوان شیر..."></textarea>
+        <button class="action-btn">
+            <i class="fas fa-magic"></i>
+            تحلیل و ثبت با AI
+        </button>
+    </div>
+
+    <div id="activity-panel" style="display: none;">
+        <textarea class="clay-input" rows="3" placeholder="مثلاً: ۳۰ دقیقه پیاده‌روی سریع..."></textarea>
+        <button class="action-btn">
+            <i class="fas fa-running"></i>
+            ثبت فعالیت
+        </button>
+    </div>
+
+    <div id="weight-panel" style="display: none;">
+        <input type="number" class="clay-input" placeholder="وزن فعلی (کیلوگرم)">
+        <button class="action-btn">
+            <i class="fas fa-weight"></i>
+            ثبت وزن
+        </button>
+    </div>
+
+    <div class="entry-list">
+        <h3 style="color: var(--text-light); margin-bottom: 20px;">امروز</h3>
+        
+        <div class="entry-item">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="background: #dfe6e9; padding: 10px; border-radius: 10px; color: var(--primary);">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div>
+                    <div style="font-weight: bold;">صبحانه</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">نان و پنیر - ۳۰۰ کالری</div>
+                </div>
+            </div>
+            <div>
+                <i class="fas fa-pen" style="color: var(--text-light); margin-left: 10px;"></i>
+                <i class="fas fa-trash" style="color: var(--accent);"></i>
+            </div>
+        </div>
+
+        <div class="entry-item">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="background: #dfe6e9; padding: 10px; border-radius: 10px; color: #00b894;">
+                    <i class="fas fa-walking"></i>
+                </div>
+                <div>
+                    <div style="font-weight: bold;">پیاده‌روی</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">۲۰ دقیقه - ۱۰۰ کالری</div>
+                </div>
+            </div>
+            <div>
+                <i class="fas fa-pen" style="color: var(--text-light); margin-left: 10px;"></i>
+                <i class="fas fa-trash" style="color: var(--accent);"></i>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="/11" class="nav-item"><i class="fas fa-home"></i></a>
+        <a href="log.html" class="nav-item active"><i class="fas fa-plus-circle" style="font-size: 2rem; color: var(--accent); transform: translateY(-5px);"></i></a>
+        <a href="chat.html" class="nav-item"><i class="fas fa-comment-dots"></i></a>
+    </nav>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.getElementById('food-panel').style.display = 'none';
+            document.getElementById('activity-panel').style.display = 'none';
+            document.getElementById('weight-panel').style.display = 'none';
+            
+            document.getElementById(tab + '-panel').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

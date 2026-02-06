@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خانه - کلی‌مرفیسم</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --card-bg: #f0f4f8;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 90px; /* Space for nav */
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .clay-card {
+            background-color: var(--card-bg);
+            border-radius: 30px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 
+                20px 20px 60px #cbced1, 
+                -20px -20px 60px #ffffff;
+            /* Clay effect (inner shadow) mostly for buttons, but cards can be flat-ish neumorphic or clay */
+            /* Let's go for a soft raised look */
+            border: 1px solid rgba(255,255,255,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clay-card.primary {
+             background-color: var(--primary);
+             color: white;
+             box-shadow: 
+                15px 15px 40px rgba(108, 92, 231, 0.4), 
+                -15px -15px 40px rgba(255, 255, 255, 0.8);
+        }
+
+        .clay-button {
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 20px;
+            padding: 15px 30px;
+            color: var(--primary);
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 
+                8px 8px 16px #cbced1, 
+                -8px -8px 16px #ffffff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clay-button:active {
+            box-shadow: inset 8px 8px 16px #cbced1, inset -8px -8px 16px #ffffff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Floating Nav */
+        .bottom-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background-color: var(--card-bg);
+            border-radius: 50px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 
+                10px 10px 30px #cbced1, 
+                -10px -10px 30px #ffffff;
+            z-index: 100;
+        }
+
+        .nav-item {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+        
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+
+        .today-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            box-shadow: inset 8px 8px 16px #cbced1, inset -8px -8px 16px #ffffff;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .today-circle::before {
+            content: '';
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            border: 8px solid transparent;
+            border-top-color: var(--accent);
+            border-right-color: var(--accent);
+            transform: rotate(-45deg);
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>سلام، قهرمان 👋</h1>
+            <p style="color: var(--text-light); margin-top: 5px;">امروز فوق‌العاده‌ای!</p>
+        </div>
+        <div class="clay-button" style="padding: 10px 15px; border-radius: 50%;">
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+
+    <!-- Active Program -->
+    <div class="clay-card primary" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3 style="margin: 0 0 5px 0;">برنامه تناسب اندام</h3>
+                <span style="font-size: 0.9rem; opacity: 0.9;">روز ۲۴ از ۴۵</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 15px;">
+                ۵۳٪
+            </div>
+        </div>
+        <div style="margin-top: 15px; background: rgba(255,255,255,0.3); height: 8px; border-radius: 4px; overflow: hidden;">
+            <div style="width: 53%; height: 100%; background: white;"></div>
+        </div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div class="clay-card">
+        <i class="fas fa-pen edit-icon"></i>
+        <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.2rem;">وضعیت امروز</h2>
+        <div class="today-circle">
+            <span style="font-size: 2rem; font-weight: 900; color: var(--accent);">۱۲۵۰</span>
+            <span style="font-size: 0.8rem; color: var(--text-light);">کالری مصرفی</span>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-value" style="color: var(--primary);">۱۸۰۰</span>
+                <span class="stat-label">مجاز</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" style="color: #00b894;">۵۵۰</span>
+                <span class="stat-label">مانده</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7 Days Chart -->
+    <div class="clay-card">
+        <h3 style="margin-top: 0;">هفته گذشته</h3>
+        <canvas id="caloriesChart" height="200"></canvas>
+    </div>
+    
+    <!-- Weight Chart -->
+    <div class="clay-card">
+        <h3 style="margin-top: 0;">تغییرات وزن</h3>
+        <canvas id="weightChart" height="200"></canvas>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="/11" class="nav-item active"><i class="fas fa-home"></i></a>
+        <a href="log.html" class="nav-item"><i class="fas fa-plus-circle" style="font-size: 2rem; color: var(--accent); transform: translateY(-5px);"></i></a>
+        <a href="chat.html" class="nav-item"><i class="fas fa-comment-dots"></i></a>
+    </nav>
+
+    <script>
+        const ctxCal = document.getElementById('caloriesChart').getContext('2d');
+        new Chart(ctxCal, {
+            type: 'bar',
+            data: {
+                labels: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+                datasets: [{
+                    label: 'کالری',
+                    data: [1800, 1900, 1750, 1600, 2100, 1850, 1250],
+                    backgroundColor: '#a29bfe',
+                    borderRadius: 10,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        const ctxWeight = document.getElementById('weightChart').getContext('2d');
+        new Chart(ctxWeight, {
+            type: 'line',
+            data: {
+                labels: ['هفته ۱', 'هفته ۲', 'هفته ۳', 'هفته ۴'],
+                datasets: [{
+                    label: 'وزن',
+                    data: [85, 84.5, 83.8, 83.2],
+                    borderColor: '#fd79a8',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(253, 121, 168, 0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

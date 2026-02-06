@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 5: Editorial - گفتگو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design5/styles.css">
+</head>
+<body>
+  <div class="editorial-bg"></div>
+  
+  <nav class="nav">
+    <a href="/5" class="nav-item">خانه</a>
+    <a href="/5/log.html" class="nav-item">ثبت</a>
+    <a href="/5/chat.html" class="nav-item active">گفتگو</a>
+  </nav>
+
+  <main class="chat-container">
+    <header class="chat-header">
+      <div class="header-accent"></div>
+      <h1 class="chat-title">مربی شما</h1>
+      <p class="chat-subtitle">همیشه در دسترس برای راهنمایی</p>
+    </header>
+
+    <div class="messages">
+      <div class="message coach">
+        <div class="message-content">
+          <p>سلام زهرا! امروز چطور بودی؟ می‌بینم که کالری‌هایت رو خوب ثبت کردی. عالیه!</p>
+          <span class="message-time">امروز ۱۴:۳۰</span>
+        </div>
+      </div>
+
+      <div class="message user">
+        <div class="message-content">
+          <p>سلام! امروز خوب بودم ولی استرس داشتم و بیشتر از حد معمول خوردم</p>
+          <span class="message-time">امروز ۱۵:۰۰</span>
+        </div>
+      </div>
+
+      <div class="message coach">
+        <div class="message-content">
+          <p>این کاملاً طبیعی است و اتفاق می‌افته. مهم اینه که تو اینجا هستی و داریم با هم ادامه می‌دیم. فردا یک قدم کوچک برداریم: صبحانه رو کامل بخور تا در طول روز کمتر احساس گرسنگی کنی.</p>
+          <span class="message-time">امروز ۱۵:۰۲</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" placeholder="پیام خود را بنویسید...">
+      <button class="send-btn">ارسال</button>
+    </div>
+  </main>
+
+  <style>
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chat-header {
+      margin-bottom: 40px;
+      position: relative;
+      padding-left: 60px;
+    }
+
+    .chat-title {
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .chat-subtitle {
+      font-size: 14px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 400;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding-bottom: 20px;
+    }
+
+    .message {
+      display: flex;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message-content {
+      background: #fff;
+      border: 1px solid #1a1a1a;
+      padding: 20px 25px;
+      max-width: 75%;
+      position: relative;
+    }
+
+    .message.user .message-content {
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #1a1a1a;
+    }
+
+    .message-content p {
+      margin-bottom: 10px;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .message-time {
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .message.user .message-time {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .chat-input-container {
+      display: flex;
+      gap: 15px;
+      padding-top: 25px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 15px 20px;
+      border: 1px solid #1a1a1a;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-family: 'Vazirmatn', sans-serif;
+      outline: none;
+    }
+
+    .chat-input:focus {
+      border-color: #1a1a1a;
+    }
+
+    .send-btn {
+      padding: 15px 30px;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #1a1a1a;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .send-btn:hover {
+      background: #fff;
+      color: #1a1a1a;
+    }
+  </style>
+</body>
+</html>

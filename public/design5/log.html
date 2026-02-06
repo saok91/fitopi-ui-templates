@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 5: Editorial - ثبت</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design5/styles.css">
+</head>
+<body>
+  <div class="editorial-bg"></div>
+  
+  <nav class="nav">
+    <a href="/5" class="nav-item">خانه</a>
+    <a href="/5/log.html" class="nav-item active">ثبت</a>
+    <a href="/5/chat.html" class="nav-item">گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <div class="header-accent"></div>
+      <h1 class="title">ثبت اطلاعات</h1>
+      <p class="subtitle">کالری، فعالیت یا وزن</p>
+    </header>
+
+    <div class="log-tabs">
+      <button class="tab-btn active" data-tab="calorie">کالری</button>
+      <button class="tab-btn" data-tab="activity">فعالیت</button>
+      <button class="tab-btn" data-tab="weight">وزن</button>
+    </div>
+
+    <div class="tab-content active" id="calorie">
+      <div class="log-card">
+        <div class="card-header">
+          <span class="card-number">۰۱</span>
+          <h2 class="card-title">ثبت کالری</h2>
+        </div>
+        <div class="input-methods">
+          <button class="method-btn">ارسال عکس</button>
+          <button class="method-btn">نوشتن غذا</button>
+        </div>
+        <textarea class="input-text" placeholder="مثال: یک بشقاب برنج با مرغ و سالاد"></textarea>
+        <button class="submit-btn">ثبت</button>
+      </div>
+
+      <div class="recent-entries">
+        <div class="section-header">
+          <span class="section-number">۰۲</span>
+          <h3 class="entries-title">ثبت‌های اخیر</h3>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">صبحانه: نان و پنیر</span>
+            <span class="entry-time">امروز ۸:۳۰</span>
+          </div>
+          <div class="entry-calories">۳۲۰ کالری</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏</button>
+            <button class="action-icon">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="activity">
+      <div class="log-card">
+        <div class="card-header">
+          <span class="card-number">۰۱</span>
+          <h2 class="card-title">ثبت فعالیت</h2>
+        </div>
+        <textarea class="input-text" placeholder="مثال: ۳۰ دقیقه پیاده‌روی در پارک"></textarea>
+        <button class="submit-btn">ثبت</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="weight">
+      <div class="log-card">
+        <div class="card-header">
+          <span class="card-number">۰۱</span>
+          <h2 class="card-title">ثبت وزن</h2>
+        </div>
+        <div class="weight-input-group">
+          <input type="number" class="weight-input" placeholder="۷۲.۵" step="0.1">
+          <span class="weight-unit">کیلوگرم</span>
+        </div>
+        <button class="submit-btn">ثبت</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی ۹: Art Deco - ثبت</title>
+  <link rel="stylesheet" href="/design9/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/9" class="nav-item">خانه</a>
+    <a href="/9/log.html" class="nav-item active">ثبت</a>
+    <a href="/9/chat.html" class="nav-item">گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">ثبت اطلاعات</h1>
+      <p class="subtitle">کالری · فعالیت · وزن</p>
+      <div class="deco-line"></div>
+    </header>
+
+    <div class="log-tabs">
+      <button class="tab-btn active" data-tab="calorie">کالری</button>
+      <button class="tab-btn" data-tab="activity">فعالیت</button>
+      <button class="tab-btn" data-tab="weight">وزن</button>
+    </div>
+
+    <div class="tab-content active" id="calorie">
+      <div class="log-card">
+        <h2 class="card-title">◇ ثبت کالری</h2>
+        <div class="input-methods">
+          <button class="method-btn">
+            <span class="method-icon">📷</span>
+            <span>ارسال عکس</span>
+          </button>
+          <button class="method-btn">
+            <span class="method-icon">✍️</span>
+            <span>نوشتن غذا</span>
+          </button>
+        </div>
+        <textarea class="input-text" placeholder="غذای خود را شرح دهید..."></textarea>
+        <button class="submit-btn">ثبت کالری</button>
+      </div>
+      <div class="recent-entries">
+        <h3 class="entries-title">ثبت‌های امروز</h3>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">صبحانه: نان و پنیر و گردو</span>
+            <span class="entry-time">امروز ۸:۳۰</span>
+          </div>
+          <div class="entry-calories">380</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">ناهار: کباب کوبیده و برنج</span>
+            <span class="entry-time">امروز ۱۳:۰۰</span>
+          </div>
+          <div class="entry-calories">620</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="activity">
+      <div class="log-card">
+        <h2 class="card-title">◇ ثبت فعالیت</h2>
+        <textarea class="input-text" placeholder="فعالیت خود را شرح دهید..."></textarea>
+        <button class="submit-btn">ثبت فعالیت</button>
+      </div>
+      <div class="recent-entries">
+        <h3 class="entries-title">فعالیت‌های اخیر</h3>
+        <div class="entry-item">
+          <div class="entry-info">
+            <span class="entry-name">بدنسازی ۶۰ دقیقه</span>
+            <span class="entry-time">دیروز ۱۷:۰۰</span>
+          </div>
+          <div class="entry-calories">−350</div>
+          <div class="entry-actions">
+            <button class="action-icon">✏️</button>
+            <button class="action-icon">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="weight">
+      <div class="log-card">
+        <h2 class="card-title">◇ ثبت وزن</h2>
+        <div class="weight-input-group">
+          <input type="number" class="weight-input" placeholder="72.5" step="0.1">
+          <span class="weight-unit">KG</span>
+        </div>
+        <button class="submit-btn">ثبت وزن</button>
+      </div>
+      <div class="recent-entries">
+        <h3 class="entries-title">تاریخچه وزن</h3>
+        <div class="entry-item">
+          <div class="entry-info"><span class="entry-name">وزن</span><span class="entry-time">امروز ۷:۰۰</span></div>
+          <div class="entry-calories">72.5</div>
+          <div class="entry-actions"><button class="action-icon">✏️</button><button class="action-icon">🗑️</button></div>
+        </div>
+        <div class="entry-item">
+          <div class="entry-info"><span class="entry-name">وزن</span><span class="entry-time">هفته گذشته</span></div>
+          <div class="entry-calories">73.2</div>
+          <div class="entry-actions"><button class="action-icon">✏️</button><button class="action-icon">🗑️</button></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طراحی 2: Maximalist - خانه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/design2/styles.css">
+</head>
+<body>
+  <div class="bg-animation"></div>
+  
+  <nav class="nav">
+    <a href="/2" class="nav-item active">🏠 خانه</a>
+    <a href="/2/log.html" class="nav-item">➕ ثبت</a>
+    <a href="/2/chat.html" class="nav-item">💬 گفتگو</a>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1 class="title">سلام زهرا! 🎉</h1>
+      <p class="subtitle">برنامه ۸ هفته‌ای - هفته ۳</p>
+    </header>
+
+    <section class="program-card">
+      <div class="program-header">
+        <h2>برنامه فعال</h2>
+        <span class="program-badge">⚡ متوسط</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 37.5%"></div>
+          <div class="progress-glow"></div>
+        </div>
+        <div class="progress-text">۳۷.۵٪</div>
+      </div>
+      <div class="program-stats">
+        <div class="stat">
+          <div class="stat-icon">📅</div>
+          <span class="stat-value">۳</span>
+          <span class="stat-label">هفته گذشته</span>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">⏳</div>
+          <span class="stat-value">۵</span>
+          <span class="stat-label">هفته باقی</span>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">🎯</div>
+          <span class="stat-value">۵٪</span>
+          <span class="stat-label">هدف کاهش</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <h2 class="section-title">🔥 امروز</h2>
+      <div class="calorie-card">
+        <div class="calorie-visual">
+          <div class="calorie-circle">
+            <span class="calorie-value">۱,۲۴۵</span>
+            <span class="calorie-label">کالری</span>
+          </div>
+        </div>
+        <div class="calorie-details">
+          <div class="calorie-progress-bar">
+            <div class="calorie-fill" style="width: 62%"></div>
+          </div>
+          <div class="calorie-info">
+            <span>از ۲,۰۰۰ کالری مجاز</span>
+            <span class="calorie-remaining">۷۵۵ باقی مانده</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2 class="section-title">📊 کالری ۷ روز اخیر</h2>
+      <div class="chart-container">
+        <div class="chart-bars">
+          <div class="bar" style="height: 75%">
+            <span class="bar-value">۱,۵۰۰</span>
+            <span class="bar-label">شن</span>
+          </div>
+          <div class="bar" style="height: 60%">
+            <span class="bar-value">۱,۲۰۰</span>
+            <span class="bar-label">یک</span>
+          </div>
+          <div class="bar" style="height: 50%">
+            <span class="bar-value">۱,۰۰۰</span>
+            <span class="bar-label">دو</span>
+          </div>
+          <div class="bar" style="height: 45%">
+            <span class="bar-value">۹۰۰</span>
+            <span class="bar-label">سه</span>
+          </div>
+          <div class="bar" style="height: 55%">
+            <span class="bar-value">۱,۱۰۰</span>
+            <span class="bar-label">چهار</span>
+          </div>
+          <div class="bar" style="height: 40%">
+            <span class="bar-value">۸۰۰</span>
+            <span class="bar-label">پنج</span>
+          </div>
+          <div class="bar active" style="height: 62%">
+            <span class="bar-value">۱,۲۴۵</span>
+            <span class="bar-label">امروز</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="weight-section">
+      <h2 class="section-title">⚖️ تغییرات وزن</h2>
+      <div class="weight-card">
+        <div class="weight-main">
+          <div class="weight-value-large">۷۲.۵</div>
+          <div class="weight-unit">کیلوگرم</div>
+        </div>
+        <div class="weight-change-badge negative">
+          <span class="change-icon">⬇️</span>
+          <span class="change-text">-۲.۳ کیلوگرم از شروع</span>
+        </div>
+        <div class="weight-chart-mini">
+          <div class="weight-dot" style="left: 5%"></div>
+          <div class="weight-dot" style="left: 20%"></div>
+          <div class="weight-dot" style="left: 35%"></div>
+          <div class="weight-dot" style="left: 50%"></div>
+          <div class="weight-dot" style="left: 65%"></div>
+          <div class="weight-dot" style="left: 80%"></div>
+          <div class="weight-dot active" style="left: 95%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="action-btn primary">✏️ ویرایش پروفایل</button>
+      <button class="action-btn secondary">⚙️ ویرایش برنامه</button>
+    </section>
+  </main>
+</body>
+</html>

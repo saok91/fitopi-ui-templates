@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصاحبه - روزنامه</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #fdfbf7;
+            --ink: #2c2c2c;
+            --border: 1px solid #2c2c2c;
+        }
+
+        body {
+            font-family: 'Noto Naskh Arabic', serif;
+            background-color: var(--bg-paper);
+            color: var(--ink);
+            margin: 0;
+            padding: 20px;
+            padding-bottom: 80px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 10px;
+            margin: 0 0 20px 0;
+            font-size: 1.5rem;
+        }
+
+        .transcript {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: #fff;
+            column-rule: 1px solid #ccc;
+        }
+
+        .line {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .speaker {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .speaker.ai { color: #555; }
+        .speaker.user { color: #000; text-decoration: underline; }
+
+        .input-wrapper {
+            margin-top: 20px;
+            border-top: 2px solid var(--ink);
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .typewriter-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-family: 'Courier New', monospace; /* Typewriter feel */
+            font-size: 1rem;
+            outline: none;
+            padding: 10px;
+        }
+
+        .send-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-paper);
+            border-top: 2px solid var(--ink);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--ink);
+            text-align: center;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+        
+        .nav-link.active {
+            opacity: 1;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .nav-icon {
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>متن مصاحبه با مربی</h1>
+
+    <div class="transcript">
+        <div class="line">
+            <span class="speaker ai">مربی:</span>
+            <span>بسیار خب، امروز چطور گذشت؟ آیا طبق برنامه پیش رفتید؟</span>
+        </div>
+        <div class="line">
+            <span class="speaker user">کاربر:</span>
+            <span>تقریباً. ناهار کمی زیاده‌روی کردم ولی قول میدم شام جبران کنم.</span>
+        </div>
+        <div class="line">
+            <span class="speaker ai">مربی:</span>
+            <span>اشکالی ندارد. تعادل کلید موفقیت است. برای شام پیشنهاد می‌کنم یک سوپ سبک میل کنید.</span>
+        </div>
+    </div>
+
+    <div class="input-wrapper">
+        <input type="text" class="typewriter-input" placeholder="پاسخ خود را تایپ کنید...">
+        <i class="fas fa-print send-icon"></i>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="/14" class="nav-link">
+            <i class="fas fa-home nav-icon"></i>
+            خانه
+        </a>
+        <a href="log.html" class="nav-link">
+            <i class="fas fa-pen-fancy nav-icon"></i>
+            ثبت
+        </a>
+        <a href="chat.html" class="nav-link active">
+            <i class="fas fa-comment-alt nav-icon"></i>
+            گفتگو
+        </a>
+    </nav>
+
+</body>
+</html>
