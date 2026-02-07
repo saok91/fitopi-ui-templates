@@ -44,4 +44,13 @@ npm install
 npm start
 ```
 
-سرور روی آدرس http://localhost:4000 بالا می‌آید. صفحهٔ اصلی لیست طرح‌هاست؛ هر طرح از آدرس `/1` تا `/25` در دسترس است (مثلاً `/3/` برای design3، `/3/log.html` و `/3/chat.html`).
+سرور روی آدرس http://localhost:4000 بالا می‌آید. صفحهٔ اصلی لیست طرح‌هاست؛ هر طرح از آدرس `design1/` تا `design25/` در دسترس است (مثلاً `design3/`، `design3/log.html` و `design3/chat.html`).
+
+### انتشار روی GitHub Pages
+
+۱. ریپو را در GitHub بسازید و کد را push کنید (شاخهٔ `main`).
+۲. در ریپو: **Settings** → **Pages** → بخش **Build and deployment**:
+   - **Source** را روی **GitHub Actions** بگذارید.
+۳. با هر push به `main`، workflow خودکار پوشهٔ `public` را روی GitHub Pages منتشر می‌کند.
+۴. بعد از اولین اجرا، سایت در آدرسی شبیه این در دسترس است:
+   - `https://<USERNAME>.github.io/frontent-design-test/`
