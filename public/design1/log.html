@@ -32,16 +32,17 @@
       <div class="log-card">
         <h2 class="card-title">ثبت کالری</h2>
         <div class="input-methods">
-          <button class="method-btn">
-            <span class="method-icon">📷</span>
+          <button type="button" class="method-btn" aria-label="ارسال عکس غذا">
+            <span class="method-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
             <span>ارسال عکس</span>
           </button>
-          <button class="method-btn">
-            <span class="method-icon">✍️</span>
+          <button type="button" class="method-btn" aria-label="نوشتن غذا">
+            <span class="method-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
             <span>نوشتن غذا</span>
           </button>
         </div>
-        <textarea class="input-text" placeholder="مثال: یک بشقاب برنج با مرغ و سالاد"></textarea>
+        <label for="calorie-input" class="visually-hidden">توضیح غذا برای ثبت کالری</label>
+        <textarea id="calorie-input" class="input-text" placeholder="مثال: یک بشقاب برنج با مرغ و سالاد"></textarea>
         <button class="submit-btn">ثبت</button>
       </div>
 
@@ -54,8 +55,8 @@
           </div>
           <div class="entry-calories">۳۲۰ کالری</div>
           <div class="entry-actions">
-            <button class="action-icon">✏️</button>
-            <button class="action-icon">🗑️</button>
+            <button type="button" class="action-icon" aria-label="ویرایش"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> </button>
+            <button type="button" class="action-icon" aria-label="حذف"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> </button>
           </div>
         </div>
         <div class="entry-item">
@@ -65,8 +66,8 @@
           </div>
           <div class="entry-calories">۴۵۰ کالری</div>
           <div class="entry-actions">
-            <button class="action-icon">✏️</button>
-            <button class="action-icon">🗑️</button>
+            <button type="button" class="action-icon" aria-label="ویرایش"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> </button>
+            <button type="button" class="action-icon" aria-label="حذف"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> </button>
           </div>
         </div>
       </div>
@@ -75,7 +76,8 @@
     <div class="tab-content" id="activity">
       <div class="log-card">
         <h2 class="card-title">ثبت فعالیت</h2>
-        <textarea class="input-text" placeholder="مثال: ۳۰ دقیقه پیاده‌روی در پارک"></textarea>
+        <label for="activity-input" class="visually-hidden">توضیح فعالیت</label>
+        <textarea id="activity-input" class="input-text" placeholder="مثال: ۳۰ دقیقه پیاده‌روی در پارک"></textarea>
         <button class="submit-btn">ثبت</button>
       </div>
 
@@ -88,8 +90,8 @@
           </div>
           <div class="entry-calories">۱۵۰ کالری</div>
           <div class="entry-actions">
-            <button class="action-icon">✏️</button>
-            <button class="action-icon">🗑️</button>
+            <button type="button" class="action-icon" aria-label="ویرایش"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> </button>
+            <button type="button" class="action-icon" aria-label="حذف"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> </button>
           </div>
         </div>
       </div>
@@ -99,8 +101,9 @@
       <div class="log-card">
         <h2 class="card-title">ثبت وزن</h2>
         <div class="weight-input-group">
-          <input type="number" class="weight-input" placeholder="۷۲.۵" step="0.1">
-          <span class="weight-unit">کیلوگرم</span>
+          <label for="weight-input" class="visually-hidden">وزن به کیلوگرم</label>
+          <input type="number" id="weight-input" class="weight-input" placeholder="۷۲.۵" step="0.1" aria-describedby="weight-unit">
+          <span class="weight-unit" id="weight-unit">کیلوگرم</span>
         </div>
         <button class="submit-btn">ثبت</button>
       </div>
@@ -114,8 +117,8 @@
           </div>
           <div class="entry-calories">۷۲.۵ کیلوگرم</div>
           <div class="entry-actions">
-            <button class="action-icon">✏️</button>
-            <button class="action-icon">🗑️</button>
+            <button type="button" class="action-icon" aria-label="ویرایش"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> </button>
+            <button type="button" class="action-icon" aria-label="حذف"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> </button>
           </div>
         </div>
         <div class="entry-item">
@@ -125,8 +128,8 @@
           </div>
           <div class="entry-calories">۷۳.۲ کیلوگرم</div>
           <div class="entry-actions">
-            <button class="action-icon">✏️</button>
-            <button class="action-icon">🗑️</button>
+            <button type="button" class="action-icon" aria-label="ویرایش"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> </button>
+            <button type="button" class="action-icon" aria-label="حذف"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> </button>
           </div>
         </div>
       </div>

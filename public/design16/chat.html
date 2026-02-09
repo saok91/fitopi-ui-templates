@@ -15,7 +15,7 @@
     <!-- Chat Header -->
     <header class="chat-header">
       <div class="coach-info">
-        <div class="coach-avatar">🧡</div>
+        <div class="coach-avatar" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="coach-details">
           <span class="coach-name">مربی فیتوپی</span>
           <span class="coach-status online">آنلاین</span>
@@ -28,7 +28,7 @@
       <div class="messages-container">
         <div class="message coach">
           <div class="message-bubble">
-            <p>سلام زهرا جان! 👋</p>
+            <p>سلام زهرا جان!</p>
             <p>امروز چطوری؟ دیدم صبحانه‌ت رو ثبت کردی، عالی بود!</p>
           </div>
           <span class="message-time">۸:۴۵</span>
@@ -43,7 +43,7 @@
 
         <div class="message coach">
           <div class="message-bubble">
-            <p>آها، فهمیدم! مهمونی‌ها چالش‌برانگیزن، ولی نگران نباش. 💪</p>
+            <p>آها، فهمیدم! مهمونی‌ها چالش‌برانگیزن، ولی نگران نباش.</p>
             <p>یه پیشنهاد دارم: قبل از رفتن یه میان‌وعده سبک بخور که خیلی گرسنه نباشی. بعدش هم سعی کن از همه‌چیز یه کم بکشی، نه اینکه محروم باشی.</p>
           </div>
           <span class="message-time">۹:۱۵</span>
@@ -58,10 +58,70 @@
 
         <div class="message coach">
           <div class="message-bubble">
-            <p>عالیه! 🍎 سیب انتخاب خوبیه چون فیبر داره و سیر میکنه.</p>
+            <p>عالیه! سیب انتخاب خوبیه چون فیبر داره و سیر میکنه.</p>
             <p>بعد از مهمونی هم بهم بگو چی خوردی تا با هم حساب کنیم. موفق باشی!</p>
           </div>
           <span class="message-time">۹:۲۰</span>
+        </div>
+
+        <!-- چک‌این روزانه -->
+        <div class="message checkin" id="checkin-block">
+          <div class="checkin-bubble">
+            <div class="checkin-header">
+              <span class="checkin-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </span>
+              <span class="checkin-title">چک‌این روزانه</span>
+            </div>
+            <form class="checkin-form" id="checkin-form" novalidate>
+              <div class="checkin-field">
+                <label class="checkin-label">امروز چطوری؟ <span class="required">*</span></label>
+                <div class="checkin-options" role="group" aria-required="true">
+                  <button type="button" class="checkin-option" data-value="good" data-name="mood">خوب</button>
+                  <button type="button" class="checkin-option" data-value="medium" data-name="mood">متوسط</button>
+                  <button type="button" class="checkin-option" data-value="bad" data-name="mood">بد</button>
+                </div>
+                <input type="hidden" name="mood" id="checkin-mood" required>
+                <span class="checkin-error" id="error-mood" aria-live="polite"></span>
+              </div>
+              <div class="checkin-field">
+                <label class="checkin-label">چقدر به رژیمت پایبند بودی؟ <span class="required">*</span></label>
+                <div class="checkin-options" role="group" aria-required="true">
+                  <button type="button" class="checkin-option" data-value="good" data-name="diet">خوب</button>
+                  <button type="button" class="checkin-option" data-value="medium" data-name="diet">متوسط</button>
+                  <button type="button" class="checkin-option" data-value="bad" data-name="diet">بد</button>
+                </div>
+                <input type="hidden" name="diet" id="checkin-diet" required>
+                <span class="checkin-error" id="error-diet" aria-live="polite"></span>
+              </div>
+              <div class="checkin-field">
+                <label class="checkin-label">چالشت چیه؟ <span class="optional">(اختیاری)</span></label>
+                <textarea name="challenge" id="checkin-challenge" class="checkin-textarea" placeholder="اگر چالشی داری بنویس..." rows="1"></textarea>
+              </div>
+              <button type="submit" class="checkin-submit-btn">ثبت چک‌این</button>
+            </form>
+            <!-- اثر کوچک بعد از ثبت -->
+            <div class="checkin-trace" id="checkin-trace">
+              <span class="checkin-trace-icon">✓</span>
+              <span class="checkin-trace-text">چک‌این ثبت شد</span>
+            </div>
+          </div>
+          <span class="message-time checkin-time">الان</span>
+        </div>
+
+        <div class="message coach">
+          <div class="message-bubble">
+            <p>چک‌این امروزت رو دیدم، ممنون که ثبت کردی!</p>
+            <p>اگه بخوای دربارهٔ چالش‌هایی که گفتی بیشتر حرف بزنیم، همینجا بنویس.</p>
+          </div>
+          <span class="message-time">۹:۲۵</span>
+        </div>
+
+        <div class="message user">
+          <div class="message-bubble">
+            <p>باشه حتماً. ممنون از راهنمایی‌هات 🙏</p>
+          </div>
+          <span class="message-time">۹:۲۷</span>
         </div>
       </div>
     </main>
@@ -69,8 +129,9 @@
     <!-- Chat Input -->
     <div class="chat-input-container">
       <div class="chat-input-wrapper">
-        <textarea class="chat-input" placeholder="پیام خود را بنویسید..." rows="1"></textarea>
-        <button class="send-btn">
+        <label for="chat-input" class="visually-hidden">پیام خود را بنویسید</label>
+        <textarea id="chat-input" class="chat-input" placeholder="پیام خود را بنویسید..." rows="1"></textarea>
+        <button type="button" class="send-btn" aria-label="ارسال پیام">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"/>
             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -102,5 +163,84 @@
       </a>
     </nav>
   </div>
+  <script>
+    (function () {
+      var form = document.getElementById('checkin-form');
+      var block = document.getElementById('checkin-block');
+      var trace = document.getElementById('checkin-trace');
+      var moodInput = document.getElementById('checkin-mood');
+      var dietInput = document.getElementById('checkin-diet');
+      var errorMood = document.getElementById('error-mood');
+      var errorDiet = document.getElementById('error-diet');
+
+      function clearErrors() {
+        errorMood.textContent = '';
+        errorDiet.textContent = '';
+      }
+
+      function selectOption(fieldName, value) {
+        var opts = block.querySelectorAll('.checkin-option[data-name="' + fieldName + '"]');
+        opts.forEach(function (o) { o.classList.toggle('selected', o.getAttribute('data-value') === value); });
+        if (fieldName === 'mood') moodInput.value = value;
+        if (fieldName === 'diet') dietInput.value = value;
+        if (fieldName === 'mood') errorMood.textContent = '';
+        if (fieldName === 'diet') errorDiet.textContent = '';
+      }
+
+      block.querySelectorAll('.checkin-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          selectOption(btn.getAttribute('data-name'), btn.getAttribute('data-value'));
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearErrors();
+        var valid = true;
+        if (!moodInput.value.trim()) {
+          errorMood.textContent = 'لطفاً یکی را انتخاب کنید';
+          valid = false;
+        }
+        if (!dietInput.value.trim()) {
+          errorDiet.textContent = 'لطفاً یکی را انتخاب کنید';
+          valid = false;
+        }
+        if (!valid) return;
+        block.classList.add('checkin-submitted');
+      });
+
+      // textarea چالش: یک خط اول، تا ۳ خط رشد، بعد اسکرول
+      (function () {
+        var ta = document.getElementById('checkin-challenge');
+        if (!ta) return;
+        var style = getComputedStyle(ta);
+        var lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.4;
+        var paddingTop = parseFloat(style.paddingTop) || 10;
+        var paddingBottom = parseFloat(style.paddingBottom) || 10;
+        var oneLineHeight = 44;
+        var maxHeight = Math.ceil(lineHeight * 3 + paddingTop + paddingBottom);
+
+        function resize() {
+          ta.style.height = oneLineHeight + 'px';
+          var sh = ta.scrollHeight;
+          if (sh <= oneLineHeight) {
+            ta.style.overflowY = 'hidden';
+            return;
+          }
+          ta.style.height = 'auto';
+          sh = ta.scrollHeight;
+          if (sh <= maxHeight) {
+            ta.style.height = sh + 'px';
+            ta.style.overflowY = 'hidden';
+          } else {
+            ta.style.height = maxHeight + 'px';
+            ta.style.overflowY = 'auto';
+          }
+        }
+        ta.addEventListener('input', resize);
+        resize();
+      })();
+    })();
+  </script>
 </body>
 </html>
