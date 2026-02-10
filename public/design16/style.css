@@ -1016,6 +1016,90 @@ body {
   margin-bottom: 16px;
 }
 
+/* کارت ثبت وزن: در RTL از راست به چپ [input] [کیلوگرم] … [افزودن یادداشت]؛ کادر ورود راست، کیلوگرم چپش، دکمه چپ */
+.input-card .weight-input-row {
+  flex-wrap: wrap;
+}
+
+.input-card .weight-input-row .weight-unit-label {
+  order: 2;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.input-card .weight-input-row .weight-input--compact {
+  order: 1;
+  width: 100px;
+  flex: 0 0 100px;
+}
+
+.input-card .weight-input-row .add-note-btn {
+  order: 3;
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.input-card .weight-input-row .add-note-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.input-card .weight-input-row .add-note-btn[aria-expanded="true"] {
+  border-style: solid;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.add-note-btn-icon {
+  flex-shrink: 0;
+}
+
+/* بلوک یادداشت وزن: زیر weight-input-row، بالای دکمه ثبت */
+.weight-note-wrap {
+  margin-bottom: 16px;
+}
+
+.weight-note-wrap[hidden] {
+  display: none;
+}
+
+.weight-note-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  resize: none;
+  transition: border-color 0.2s ease;
+}
+
+.weight-note-input::placeholder {
+  color: var(--text-muted);
+}
+
+.weight-note-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 .weight-input {
   flex: 1;
   padding: 16px;
@@ -1028,7 +1112,7 @@ body {
   transition: border-color 0.2s ease;
 }
 
-/* کارت ثبت وزن: همان ارتفاع و ظاهر کارت کالری */
+/* کارت ثبت وزن: ارتفاع و ظاهر اینپوت */
 .input-card .weight-input-row .weight-input {
   height: 44px;
   min-height: 44px;
@@ -1049,7 +1133,7 @@ body {
   font-weight: 500;
 }
 
-/* History Card */
+/* History Card – طراحی مشابه کارت مرجع: پس‌زمینه سفید، گوشه گرد، سایه ظریف، هدر با تاریخ و آیکون‌های کوچک، مقدار اصلی برجسته */
 .history-card {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -1064,59 +1148,195 @@ body {
 }
 
 .history-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(19, 78, 74, 0.08);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* هدر کارت: چپ = آیکون‌ها + برچسب وضعیت، راست = تاریخ */
+.history-item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  background: var(--bg-elevated);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
+  padding: 10px 14px 8px;
+  gap: 8px;
 }
 
-.item-info {
+.item-header-left {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-item-header .action-btns {
+  display: flex;
+  align-items: center;
   gap: 4px;
 }
 
-.item-title {
-  font-size: 14px;
-  font-weight: 600;
+.history-item-header .action-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.history-item-header .action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.history-item-header .action-btn.edit:hover {
+  background: rgba(19, 78, 74, 0.08);
   color: var(--text-primary);
 }
 
-.item-time {
+.history-item-header .action-btn.delete {
+  color: var(--error);
+}
+
+.history-item-header .action-btn.delete:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.item-status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.item-status-badge--confirmed {
+  background: rgba(5, 150, 105, 0.12);
+  color: var(--success);
+}
+
+.item-date {
   font-size: 12px;
   color: var(--text-muted);
 }
 
-.item-actions {
+/* بدنه کارت: تصویر اختیاری + محتوا */
+.history-item-body {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  gap: 12px;
+  padding: 0 14px 14px;
+  align-items: flex-start;
 }
 
-.item-value {
+.item-media {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.item-media-placeholder {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-content--full {
+  margin-right: 0;
+}
+
+.item-content .item-title {
   font-size: 14px;
-  font-weight: 700;
-  color: var(--primary);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+  line-height: 1.4;
 }
 
-.item-value.activity {
+/* مقدار اصلی برجسته (کالری / کالری سوخته‌شده / وزن) */
+.item-value-block {
+  margin: 0 0 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.item-value-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.item-value-block--activity .item-value-num {
   color: var(--success);
 }
 
+.item-value-block--weight .item-value-num {
+  color: var(--primary-dark);
+}
+
+.item-value-unit {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* درشت‌مغذی‌ها (فقط کارت کالری) */
+.item-macros {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* یادداشت ثبت وزن: زیر عدد وزن در کارت */
+.item-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+
+.item-note:empty {
+  display: none;
+}
+
+/* آیکون‌های کلی action (در صورت استفاده در جاهای دیگر) */
 .action-btns {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .action-btn {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border: none;
   background: var(--bg-card);
   border-radius: var(--radius-sm);
@@ -1126,9 +1346,10 @@ body {
   justify-content: center;
   transition: background 0.2s ease;
 }
+
 .action-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .action-btn:hover {
@@ -1136,7 +1357,7 @@ body {
 }
 
 .action-btn.delete:hover {
-  background: rgba(196, 92, 74, 0.1);
+  background: rgba(220, 38, 38, 0.1);
 }
 
 /* Chat App */
@@ -1738,6 +1959,10 @@ body {
 
 .edit-form-panel .weight-input.edit-number {
   font-size: 18px;
+}
+
+#edit-panel-weight .weight-note-input {
+  margin-top: 12px;
 }
 
 .edit-modal-footer {
